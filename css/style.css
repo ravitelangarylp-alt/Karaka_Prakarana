@@ -1,0 +1,111 @@
+:root {
+    --bg-color: #F9F3E5; 
+    --primary-red: #8B0000; 
+    --card-bg: #EAE0C9; 
+    --white-bg: #FFFFFF;
+    --text-dark: #333333;
+    --color-karma: #0056b3; 
+    --color-lakshana: #d9534f; 
+    --color-phala: #28a745; 
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Laila', sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container { max-width: 900px; width: 100%; }
+.special-word { font-family: 'Inknut Antiqua', serif; color: var(--primary-red); font-weight: 700; }
+
+.hl-karma { color: var(--color-karma); font-weight: bold; padding: 2px 5px; background: #e6f2ff; border-radius: 5px;}
+.hl-lakshana { color: var(--color-lakshana); font-weight: bold; padding: 2px 5px; background: #fdf0ef; border-radius: 5px;}
+.hl-phala { color: var(--color-phala); font-weight: bold; padding: 2px 5px; background: #eafaf1; border-radius: 5px;}
+
+.lang-container {
+    text-align: right;
+    margin-bottom: -15px;
+    position: relative;
+    z-index: 10;
+}
+
+select#lang-switch {
+    font-family: 'Laila', sans-serif;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-red);
+    background-color: var(--white-bg);
+    color: var(--primary-red);
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.header-card { 
+    background-color: var(--card-bg); 
+    border-radius: 20px; 
+    padding: 40px 30px; 
+    text-align: center; 
+    margin-bottom: 25px; 
+}
+.level-badge { 
+    background-color: var(--primary-red); 
+    color: white; 
+    padding: 6px 20px; 
+    border-radius: 25px; 
+    font-size: 1.1em; 
+    display: inline-block; 
+    margin-bottom: 20px; 
+}
+.sutra-title { font-size: 4em; margin: 0 0 30px 0; line-height: 1; }
+.ashtadhyayi-num { font-size: 0.35em; color: #555; vertical-align: middle; font-family: 'Laila', sans-serif; font-weight: 600; }
+.sutra-vritti {
+    background-color: var(--white-bg);
+    border-top: 8px solid var(--primary-red);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    color: var(--text-dark);
+}
+
+.metadata-box {
+    background-color: #FEFBF1;
+    border: 1px solid #EAE0C9;
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 1.2em;
+    line-height: 1.9;
+}
+.meta-row { display: flex; margin-bottom: 12px; }
+.meta-row:last-child { margin-bottom: 0; }
+.meta-label { width: 140px; color: #B22222; font-weight: bold; flex-shrink: 0; }
+.meta-arrow { color: #B22222; font-weight: bold; margin-right: 15px; letter-spacing: -2px; font-size: 1.1em; }
+.meta-value { flex-grow: 1; }
+.blue-text { color: #0000FF; font-weight: 600; }
+.grey-text { color: #777777; }
+.anchor-icon { color: #333; font-size: 0.9em; text-decoration: none; margin: 0 5px; }
+
+.content-box { background-color: var(--white-bg); border-left: 5px solid var(--primary-red); border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); line-height: 1.8; font-size: 1.2em; text-align: justify; }
+.box-title { color: var(--primary-red); font-family: 'Inknut Antiqua', serif; font-size: 1.4em; margin-bottom: 15px; border-bottom: 1px dashed #DEB887; padding-bottom: 5px; text-align: left; }
+
+.legend-box { display: flex; justify-content: space-around; align-items: center; background-color: #fff8e1; border: 2px solid #ffe082; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-size: 1.1em; text-align: center; font-weight: bold;}
+
+.example-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.example-card { background-color: var(--white-bg); border: 2px solid #DEB887; border-radius: 15px; padding: 20px; line-height: 1.7; font-size: 1.15em; }
+.example-card h4 { margin-top: 0; font-size: 1.4em; color: var(--text-dark); text-align: center; background-color: #FFF3CD; padding: 15px; border-radius: 10px; }
+
+.game-box { background-color: #e3f2fd; border: 3px dashed #2196f3; border-radius: 15px; padding: 25px; text-align: center; margin-top: 40px; }
+.question { font-size: 1.3em; margin-bottom: 15px; display: none; }
+.question.active { display: block; }
+.options button { background-color: var(--white-bg); border: 2px solid #2196f3; color: #2196f3; padding: 10px 20px; margin: 5px; font-size: 1.1em; border-radius: 8px; cursor: pointer; transition: 0.3s; font-family: 'Laila', sans-serif; }
+.options button:hover { background-color: #2196f3; color: white; }
+.options button.correct { background-color: var(--color-phala) !important; border-color: var(--color-phala) !important; color: white !important; }
+.options button.wrong { background-color: var(--color-lakshana) !important; border-color: var(--color-lakshana) !important; color: white !important; }
