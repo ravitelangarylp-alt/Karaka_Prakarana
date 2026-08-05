@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>५५३ - अभिरभागे</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&family=Laila:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        .nav-btn {
+            background-color: #8B0000;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(139,0,0,0.2);
+        }
+        .nav-btn:hover {
+            background-color: #600000;
+            transform: translateY(-2px);
+        }
+        
+        /* Accordion Styles */
+        details.custom-accordion {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid #1565c0;
+            overflow: hidden;
+        }
+        details.custom-accordion summary {
+            padding: 18px 25px;
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #1565c0;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        details.custom-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+        details.custom-accordion summary:hover {
+            background-color: #f0f7ff;
+        }
+        details.custom-accordion summary .icon {
+            font-size: 1.5em;
+            color: #8B0000;
+            transition: transform 0.3s ease;
+        }
+        details.custom-accordion[open] summary .icon {
+            transform: rotate(45deg);
+        }
+        details.custom-accordion[open] summary {
+            border-bottom: 1px solid #eaeaea;
+        }
+        .details-content {
+            padding: 25px;
+            background-color: #fdfdfd;
+        }
+        .detailed-desc {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            text-align: justify;
+        }
+
+        /* 2-Column Example Grid */
+        .ex-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .ex-card-inner {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+        .ex-card-inner img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .ex-card-inner p {
+            margin: 0;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        /* Kaumudi Section Styles */
+        .kaumudi-section {
+            background-color: #fff9e6;
+            border: 2px solid #ffcc00;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .kaumudi-title {
+            color: #b30000;
+            font-size: 1.6em;
+            margin-top: 0;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .kaumudi-text {
+            font-family: 'Inknut Antiqua', serif;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #b30000;
+            margin-bottom: 20px;
+        }
+
+        @media(max-width: 768px) {
+            .ex-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="lang-container">
+        <span style="color:#8B0000; font-size:1.2em; vertical-align: middle;">🌐</span>
+        <select id="lang-switch" onchange="changeLanguage()">
+            <option value="sa" selected>संस्कृतम् (Sanskrit)</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <!-- Top Navigation -->
+    <div class="nav-buttons">
+        <a href="552.html" class="nav-btn" data-i18n="nav_prev">⬅ पूर्वसूत्रम् (५५२)</a>
+        <a href="index.html" class="nav-btn" data-i18n="nav_index">🏠 मुखपृष्ठम्</a>
+        <a href="554.html" class="nav-btn" data-i18n="nav_next">अग्रिमसूत्रम् (५५४) ➡</a>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header-card">
+        <div class="level-badge" data-i18n="sutraNum">सिद्धान्तकौमुदी - ५५३</div>
+        
+        <h1 class="special-word sutra-title" style="font-size: 1.8em;">
+            अभिरभागे <span class="ashtadhyayi-num">(१.४.९१)</span>
+        </h1>
+        
+        <div class="sutra-vritti">
+            <p style="margin: 0;" data-i18n="vritti">लक्षणम्, इत्थम्भूताख्यानम्, तथा च वीप्सा - एतेषु सन्दर्भेषु प्रयुक्तः "अभिः" इति शब्दः कर्मप्रवचनीयसंज्ञकः भवति । (भागं वर्जयित्वा)। यथा - वृक्षम् अभि विद्योतते विद्युत् । देवदत्तः मातरम् अभि साधु । वृक्षं वृक्षम् अभि सिञ्चति ।</p>
+        </div>
+    </div>
+
+    <!-- Metadata Section -->
+    <div class="metadata-box">
+        <div class="meta-row">
+            <div class="meta-label" data-i18n="meta_padaccheda">पदच्छेदः</div>
+            <div class="meta-arrow">»</div>
+            <div class="meta-value">
+                <span class="blue-text">अभिः</span> <span class="grey-text" data-i18n="meta_p1">(प्रथमा-एकवचनम्)</span> ,
+                <span class="blue-text">अभागे</span> <span class="grey-text" data-i18n="meta_p2">(सप्तमी-एकवचनम्)</span>
+            </div>
+        </div>
+        <div class="meta-row">
+            <div class="meta-label" data-i18n="meta_anuvritti">अनुवृत्तिः</div>
+            <div class="meta-arrow">»</div>
+            <div class="meta-value">
+                <span class="blue-text">कर्मप्रवचनीयाः १.४.८३</span> ⚓ , 
+                <span class="blue-text">लक्षण-इत्थम्भूताख्यान-भाग-वीप्सासु १.४.९०</span> ⚓
+            </div>
+        </div>
+        <div class="meta-row">
+            <div class="meta-label" data-i18n="meta_adhikara">अधिकारः</div>
+            <div class="meta-arrow">»</div>
+            <div class="meta-value">आकडारात् एका संज्ञा <span class="blue-text">१.४.१</span> ⚓ , प्राग्रीश्वरान्निपाताः <span class="blue-text">१.४.५६</span> ⚓ , कर्मप्रवचनीयाः <span class="blue-text">१.४.८३</span> ⚓</div>
+        </div>
+        <div class="meta-row">
+            <div class="meta-label" data-i18n="meta_sutraprakara">सूत्रप्रकारः</div>
+            <div class="meta-arrow">»</div>
+            <div class="meta-value">संज्ञासूत्रम् <span class="grey-text" data-i18n="meta_s1">( निपातसंज्ञा, कर्मप्रवचनीयसंज्ञा )</span></div>
+        </div>
+    </div>
+
+    <!-- Color Legend -->
+    <div class="legend-box">
+        <div><span class="hl-lakshana" data-i18n="legend1">लक्षण-इत्थम्भूत-वीप्साः (अभागे)</span></div>
+        <div>+</div>
+        <div><span class="hl-karma" data-i18n="legend2">अभि</span></div>
+        <div>=</div>
+        <div><span class="hl-phala" data-i18n="legend3">द्वितीया विभक्तिः</span></div>
+    </div>
+
+    <!-- 1. Meaning -->
+    <div class="content-box" style="margin-bottom: 25px;">
+        <h3 style="color: #1565c0; margin-top: 0; border-bottom: 2px dashed #eaeaea; padding-bottom: 10px;" data-i18n="sec1_title">१. सूत्रार्थः</h3>
+        <p data-i18n="sec1_desc" class="detailed-desc">कर्मप्रवचनीयाः (१.४.८३) अस्मिन् अधिकारे आहत्य पञ्चदशभिः सूत्रैः कर्मप्रवचनीयसंज्ञायाः विधानं क्रियते । तेषु इदं सप्तमं सूत्रम् । अभि इति शब्दस्य यदा लक्षणम्, इत्थम्भूताख्यानम्, तथा च वीप्सा - एतेषु सन्दर्भेषु प्रयोगः भवति तदा तस्य कर्मप्रवचनीयसंज्ञा भवति इति अस्य सूत्रस्य आशयः । (भागं विहाय)।</p>
+    </div>
+
+    <!-- Accordion Sections -->
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec2_title">२. लक्षणम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec2_desc">व्याख्यानेषु 'लक्षणम्' इति शब्दस्य अर्थः 'लक्ष्यते चिह्न्यते येन तत् लक्षणम्' इति दीयते । सरलभाषायाम्, लक्षणम् इति शब्देन अत्र - कस्यचित् पदार्थस्य आधारेण दिशायाः सङ्केतः - इति स्वीकृतः अस्ति । एतादृशस्य सङ्केतस्य सन्दर्भे अभि इति शब्दस्य प्रकृतसूत्रेण कर्मप्रवचनीयसंज्ञा भवति । यस्य पदार्थस्य आधारेण दिशायाः सङ्केतः दीयते, तस्य निर्देशः लक्षणम् इति शब्देन भवति, तथा च एतादृशस्य लक्षणस्य निर्देशार्थम् कर्मप्रवचनीययुक्ते द्वितीया (२.३.८) इत्यनेन द्वितीयाविभक्तिः प्रयुज्यते ।</p>
+            <div class="ex-grid-2">
+                <div class="ex-card-inner">
+                    <img src="images/552_l1.png" alt="ग्रामम् अभि">
+                    <p data-i18n="s2_ex1">१. देवदत्तः <span class="hl-lakshana">ग्रामम्</span> <span class="hl-karma">अभि</span> गच्छति । (ग्रामस्य दिशि गच्छति)</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_l2.png" alt="रावणम् अभि">
+                    <p data-i18n="s2_ex2">२. रामः <span class="hl-lakshana">रावणम्</span> <span class="hl-karma">अभि</span> शरान् क्षिपति । (रावणं लक्ष्यीकृत्य)</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_l3.png" alt="अग्निम् अभि">
+                    <p data-i18n="s2_ex3">३. शलभाः <span class="hl-lakshana">अग्निम्</span> <span class="hl-karma">अभि</span> पतन्ति । (अग्निं चिह्नीकृत्य)</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_l4.png" alt="वृक्षम् अभि">
+                    <p data-i18n="s2_ex4">४. विद्युत् <span class="hl-lakshana">वृक्षम्</span> <span class="hl-karma">अभि</span> विद्योतते । (विद्युत् वृक्षस्य दिशि)</p>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec3_title">३. इत्थम्भूताख्यानम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec3_desc">इत्थम्भूताख्यानम् इति शब्दस्य अर्थः व्याख्यानेषु 'कञ्चित् प्रकारम् आपन्नम् इत्थम्भूतम्, तस्य आख्यानम् इत्थम्भूताख्यानम्' - इति दीयते । सरलभाषायाम्, कस्यचित् विषयस्य सन्दर्भेण प्राप्ता स्थितिः 'इत्थम्भूतम्' नाम्ना ज्ञायते, तथा च अस्याः स्थितेः ज्ञापनम् 'इत्थम्भूताख्यानम्' इत्यनेन निर्दिश्यते । एतादृशस्य इत्थम्भूताख्यानस्य निर्देशार्थम् प्रयुक्तस्य अभि इति शब्दस्य प्रकृतसूत्रेण कर्मप्रवचनीयसंज्ञा भवति, तथा यस्य विषयस्य सन्दर्भेण इयं स्थितिः भवति तस्य निर्देशार्थम् द्वितीयाविभक्तिः प्रयुज्यते ।</p>
+            <div class="ex-grid-2">
+                <div class="ex-card-inner">
+                    <img src="images/552_i1.png" alt="मातरम् अभि">
+                    <p data-i18n="s3_ex1">१. देवदत्तः <span class="hl-lakshana">मातरम्</span> <span class="hl-karma">अभि</span> साधुः । (मातुः विषये साधुभावः)</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_i2.png" alt="हरिम् अभि">
+                    <p data-i18n="s3_ex2">२. <span class="hl-lakshana">हरिम्</span> <span class="hl-karma">अभि</span> भक्तः । (हरेः विषये भक्तः)</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_i3.png" alt="दुर्योधनम् अभि">
+                    <p data-i18n="s3_ex3">३. <span class="hl-lakshana">दुर्योधनम्</span> <span class="hl-karma">अभि</span> क्रुद्धः । (दुर्योधनस्य विषये क्रोधः)</p>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec4_title">४. वीप्सा अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec4_desc">वीप्सा इति शब्दस्य अर्थः 'पदार्थान् व्याप्तुम् इच्छा वीप्सा' - इति दीयते । यदा एका एव क्रिया एकप्रकारस्य सर्वेषाम् अपि वस्तूनां कृते भवति, तदा तस्याः निर्देशः वीप्सा इत्यनेन क्रियते । अस्याः वीप्सायाः सन्दर्भेण अभि इति शब्दस्य प्रकृतसूत्रेण कर्मप्रवचनीयसंज्ञा भवति । नित्यवीप्सयोः (८.१.४) इत्यनेन एतेषां शब्दानां द्वित्वम् अपि विधीयते ।</p>
+            <div class="ex-grid-2">
+                <div class="ex-card-inner">
+                    <img src="images/552_v1.png" alt="वृक्षं वृक्षम् अभि">
+                    <p data-i18n="s4_ex1">१. <span class="hl-lakshana">वृक्षं वृक्षम्</span> <span class="hl-karma">अभि</span> सिञ्चति । (प्रत्येकं वृक्षस्य सन्दर्भेण सिञ्चनक्रिया)</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_v2.png" alt="गृहं गृहम् अभि">
+                    <p data-i18n="s4_ex2">२. <span class="hl-lakshana">गृहं गृहम्</span> <span class="hl-karma">अभि</span> पश्यति । (प्रत्येकं गृहस्य विषये दर्शनक्रिया)</p>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec5_title">५. सूत्रे प्रयुक्तस्य 'अभागे' इति शब्दस्य अर्थः</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec5_desc">प्रकृतसूत्रे विद्यमानस्य 'अभागे' इति पदस्य अन्वयः पूर्वसूत्रे विद्यमानेन 'लक्षणेत्थम्भूताख्यानभागवीप्सासु' इति शब्देन सह भवति । पूर्वसूत्रे उक्तेभ्यः चतुर्भ्यः विषयेभ्यः 'भागः' इति विषयं वर्जयित्वा अन्येषाम् विषयाणाम् सन्दर्भेण 'अभि' शब्दस्य कर्मप्रवचनीयसंज्ञा भवति, इति स्पष्टीकर्तुम् 'अभागे' इति पदं स्थापितम् वर्तते । <b>भागस्य सन्दर्भेण प्रयुक्तस्य अभि-शब्दस्य कर्मप्रवचनीयसंज्ञा न भवति ।</b> यथा - <i>'यद् अत्र मम अभिष्यात् तद् दीयताम्'</i> अस्मिन् वाक्ये भागस्य सन्दर्भे प्रयुक्तस्य 'अभि' शब्दस्य उपसर्गसंज्ञा भवति, अतश्च उपसर्गप्रादुर्भ्यामस्तिर्यच्परः (८.३.८७) इत्यनेन सकारस्य षत्वम् (अभिष्यात्) कृतं दृश्यते ।</p>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec6_title">६. अन्ये विशेषाः (प्रयोजनम्, सम्बन्धद्योतकः, समासः)</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <h4 style="color:#8B0000; margin-bottom:5px;" data-i18n="s6_sub1">कर्मप्रवचनीयसंज्ञकः अभि-शब्दः अत्र सम्बन्धस्य द्योतकः</h4>
+            <p class="detailed-desc" data-i18n="s6_desc1">अभि इति कर्मप्रवचनीयसंज्ञकः लक्षणादीन् अर्थान् नैव निर्दिशति, अपितु सम्बन्धमात्रस्य निर्देशं करोति। (वृक्षम् अभि विद्योतते - अत्र लक्ष्यलक्षणसम्बन्धः। मातरम् अभि साधु - अत्र विषयविषयिभावसम्बन्धः। वृक्षं वृक्षम् अभि - अत्र साध्यसाधनभावसंबंधः)।</p>
+            
+            <h4 style="color:#8B0000; margin-bottom:5px;" data-i18n="s6_sub2">संज्ञायाः प्रयोजनम्</h4>
+            <p class="detailed-desc" data-i18n="s6_desc2">१. द्वितीयाविभक्तिविधानार्थम् (कर्मप्रवचनीययुक्ते द्वितीया)। २. उपसर्गसंज्ञाप्रतिषेधार्थम् (वृक्षं वृक्षम् अभि सिञ्चति - अत्र अभि इत्यस्य उपसर्गत्वं न भवति, येन सिञ्चति इत्यस्य सकारस्य अनिष्टं षत्वं न भवति)।</p>
+
+            <h4 style="color:#8B0000; margin-bottom:5px;" data-i18n="s6_sub3">लक्षणस्य सन्दर्भेण 'अभि' इत्यनेन सह अव्ययीभावसमासः</h4>
+            <p class="detailed-desc" data-i18n="s6_desc3">लक्षणार्थे प्रयुक्तस्य अभि इत्यस्य 'लक्षणेनाभिप्रती आभिमुख्ये (२.१.१४)' इत्यनेन विकल्पेन अव्ययीभावसमासः अपि सम्भवति । यथा - अग्निम् अभि शलभाः पतन्ति = <b>अभ्यग्निं</b> शलभाः पतन्ति । एवमेव ग्रामम् अभि गच्छति = <b>अभिग्रामं</b> गच्छति ।</p>
+
+            <h4 style="color:#8B0000; margin-bottom:5px;" data-i18n="s6_sub4">लक्षणादिषु एव किमर्थम्?</h4>
+            <p class="detailed-desc" data-i18n="s6_desc4">यत्र अभि इति शब्दः अन्येषु अर्थेषु प्रयुज्यते, तत्र कर्मप्रवचनीयसंज्ञा न भवति । यथा - <b>जलेन अभिषिञ्चति</b> इत्यत्र अभि इत्यस्य 'सर्वतः' अर्थः अस्ति । अत्र उपसर्गसंज्ञा भवति, अतः सिञ्चति इत्यस्य षत्वं (अभिषिञ्चति) भवति ।</p>
+        </div>
+    </details>
+
+    <!-- Siddhanta Kaumudi Section -->
+    <div class="kaumudi-section">
+        <h2 class="kaumudi-title" data-i18n="kaumudi_title">📖 सिद्धान्तकौमुदी-सङ्ग्रहः</h2>
+        
+        <div class="kaumudi-text">
+            <p data-i18n="kaumudi_vritti">भागवर्जे लक्षणादावभिरुक्तसञ्ज्ञः स्यात् । हरिमभि वर्तते । भक्तो हरिमभि । देवं देवमभि सिञ्चति । अभागे किम् ? यदत्र ममाभिष्यात्तद्दीयताम् ॥</p>
+        </div>
+        
+        <p class="detailed-desc" data-i18n="kaumudi_desc"><b>कौमुद्याः विवरणम् :</b> अत्र कौमुदीकारेण 'लक्षणेत्थम्भूताख्यान...' इति पूर्वसूत्रेण सह अस्य 'अभिरभागे' इत्यस्य सम्बन्धं दर्शयित्वा भागं विहाय लक्षणादिषु अर्थेषु अभिः कर्मप्रवचनीयः भवति इति स्पष्टीक्रितम्। लक्षणे 'हरिम् अभि वर्तते', इत्थम्भूताख्याने 'भक्तो हरिम् अभि', वीप्सायां च 'देवं देवम् अभि सिञ्चति' इति उदाहृतम्। 'भाग' अर्थे तु 'अभि' न भवति (यदत्र ममाभिष्यात्) इति पूर्वमेव व्याख्यातम्।</p>
+        
+        <div class="ex-grid-2" style="margin-top: 20px;">
+            <div class="ex-card-inner">
+                <img src="images/552_i2.png" alt="भक्तो हरिम् अभि">
+                <p data-i18n="k_ex1">भक्तो हरिम् अभि ।</p>
+            </div>
+            <div class="ex-card-inner">
+                <img src="images/552_l4.png" alt="वृक्षम् अभि विद्योतते">
+                <p data-i18n="k_ex2">वृक्षम् अभि विद्योतते विद्युत् ।</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="game-box" id="exam-section">
+        <h2 class="special-word" style="color:#1565c0; margin-top:0;" data-i18n="gameTitle">🎮 ज्ञान-परीक्षा (Quiz)</h2>
+        <p style="color:#666;" data-i18n="gameSubtitle">प्रश्नानाम् उत्तरं दत्त्वा ज्ञानं दृढीकुर्वन्तु!</p>
+        
+        <div class="question active" id="q1">
+            <p data-i18n="q1text"><b>प्रश्नः १:</b> 'अभिरभागे' सूत्रेण 'अभि' इत्यस्य कस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा न भवति?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 1, false)" data-i18n="q1o1">लक्षणे</button>
+                <button onclick="checkAnswer(this, 1, true)" data-i18n="q1o2">भागे</button>
+                <button onclick="checkAnswer(this, 1, false)" data-i18n="q1o3">वीप्सायाम्</button>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <p data-i18n="q2text"><b>प्रश्नः २:</b> 'यद् अत्र मम अभिष्यात्' अत्र षत्वं किमर्थं जातम्?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 2, false)" data-i18n="q2o1">कर्मप्रवचनीयसंज्ञा अस्ति इति कारणेन</button>
+                <button onclick="checkAnswer(this, 2, true)" data-i18n="q2o2">भागार्थे उपसर्गत्वम् अस्ति इति कारणेन</button>
+                <button onclick="checkAnswer(this, 2, false)" data-i18n="q2o3">वीप्सा अस्ति इति कारणेन</button>
+            </div>
+        </div>
+
+        <div class="question" id="q3">
+            <p data-i18n="q3text"><b>प्रश्नः ३:</b> 'अग्निम् अभि शलभाः पतन्ति' इत्यस्य अव्ययीभावसमासरूपं किम्?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 3, false)" data-i18n="q3o1">अग्न्यभि</button>
+                <button onclick="checkAnswer(this, 3, true)" data-i18n="q3o2">अभ्यग्निम्</button>
+                <button onclick="checkAnswer(this, 3, false)" data-i18n="q3o3">अग्निमभि</button>
+            </div>
+        </div>
+
+        <div id="success-msg" style="display:none;">
+            <h3 style="color:var(--color-phala);" data-i18n="successMsg">🌟 उत्तमम्! भवान्/भवती एतत् सूत्रं सम्यक् ज्ञातवान्/ज्ञातवती।</h3>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="nav-buttons">
+        <a href="552.html" class="nav-btn" data-i18n="nav_prev">⬅ पूर्वसूत्रम् (५५२)</a>
+        <a href="index.html" class="nav-btn" data-i18n="nav_index">🏠 मुखपृष्ठम्</a>
+        <a href="554.html" class="nav-btn" data-i18n="nav_next">अग्रिमसूत्रम् (५५४) ➡</a>
+    </div>
+
+</div>
+
+<!-- LOCAL TRANSLATION DATA FOR THIS SUTRA ONLY -->
+<script>
+    const translations = {
+        "sa": {
+            "nav_prev": "⬅ पूर्वसूत्रम् (५५२)", "nav_index": "🏠 मुखपृष्ठम्", "nav_next": "अग्रिमसूत्रम् (५५४) ➡",
+            "meta_padaccheda": "पदच्छेदः", "meta_anuvritti": "अनुवृत्तिः", "meta_adhikara": "अधिकारः", "meta_sutraprakara": "सूत्रप्रकारः",
+            "sutraNum": "सिद्धान्तकौमुदी - ५५३",
+            "vritti": "लक्षणम्, इत्थम्भूताख्यानम्, तथा च वीप्सा - एतेषु सन्दर्भेषु प्रयुक्तः \"अभिः\" इति शब्दः कर्मप्रवचनीयसंज्ञकः भवति । (भागं वर्जयित्वा)। यथा - वृक्षम् अभि विद्योतते विद्युत् । देवदत्तः मातरम् अभि साधु । वृक्षं वृक्षम् अभि सिञ्चति ।",
+            "meta_p1": "(प्रथमा-एकवचनम्)", "meta_p2": "(सप्तमी-एकवचनम्)", "meta_s1": "( निपातसंज्ञा, कर्मप्रवचनीयसंज्ञा )",
+            "legend1": "लक्षण-इत्थम्भूत-वीप्साः (अभागे)", "legend2": "अभि", "legend3": "द्वितीया विभक्तिः",
+            "sec1_title": "१. सूत्रार्थः",
+            "sec1_desc": "कर्मप्रवचनीयाः (१.४.८३) अस्मिन् अधिकारे आहत्य पञ्चदशभिः सूत्रैः कर्मप्रवचनीयसंज्ञायाः विधानं क्रियते । तेषु इदं सप्तमं सूत्रम् । अभि इति शब्दस्य यदा लक्षणम्, इत्थम्भूताख्यानम्, तथा च वीप्सा - एतेषु सन्दर्भेषु प्रयोगः भवति तदा तस्य कर्मप्रवचनीयसंज्ञा भवति इति अस्य सूत्रस्य आशयः । (भागं विहाय)।",
+            "sec2_title": "२. लक्षणम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा",
+            "sec2_desc": "व्याख्यानेषु 'लक्षणम्' इति शब्दस्य अर्थः 'लक्ष्यते चिह्न्यते येन तत् लक्षणम्' इति दीयते । सरलभाषायाम्, लक्षणम् इति शब्देन अत्र - कस्यचित् पदार्थस्य आधारेण दिशायाः सङ्केतः - इति स्वीकृतः अस्ति । एतादृशस्य सङ्केतस्य सन्दर्भे अभि इति शब्दस्य प्रकृतसूत्रेण कर्मप्रवचनीयसंज्ञा भवति । यस्य पदार्थस्य आधारेण दिशायाः सङ्केतः दीयते, तस्य निर्देशः लक्षणम् इति शब्देन भवति, तथा च एतादृशस्य लक्षणस्य निर्देशार्थम् कर्मप्रवचनीययुक्ते द्वितीया (२.३.८) इत्यनेन द्वितीयाविभक्तिः प्रयुज्यते ।",
+            "s2_ex1": "१. देवदत्तः <span class='hl-lakshana'>ग्रामम्</span> <span class='hl-karma'>अभि</span> गच्छति । (ग्रामस्य दिशि गच्छति)",
+            "s2_ex2": "२. रामः <span class='hl-lakshana'>रावणम्</span> <span class='hl-karma'>अभि</span> शरान् क्षिपति । (रावणं लक्ष्यीकृत्य)",
+            "s2_ex3": "३. शलभाः <span class='hl-lakshana'>अग्निम्</span> <span class='hl-karma'>अभि</span> पतन्ति । (अग्निं चिह्नीकृत्य)",
+            "s2_ex4": "४. विद्युत् <span class='hl-lakshana'>वृक्षम्</span> <span class='hl-karma'>अभि</span> विद्योतते । (विद्युत् वृक्षस्य दिशि)",
+            "sec3_title": "३. इत्थम्भूताख्यानम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा",
+            "sec3_desc": "इत्थम्भूताख्यानम् इति शब्दस्य अर्थः व्याख्यानेषु 'कञ्चित् प्रकारम् आपन्नम् इत्थम्भूतम्, तस्य आख्यानम् इत्थम्भूताख्यानम्' - इति दीयते । सरलभाषायाम्, कस्यचित् विषयस्य सन्दर्भेण प्राप्ता स्थितिः 'इत्थम्भूतम्' नाम्ना ज्ञायते, तथा च अस्याः स्थितेः ज्ञापनम् 'इत्थम्भूताख्यानम्' इत्यनेन निर्दिश्यते । एतादृशस्य इत्थम्भूताख्यानस्य निर्देशार्थम् प्रयुक्तस्य अभि इति शब्दस्य प्रकृतसूत्रेण कर्मप्रवचनीयसंज्ञा भवति, तथा यस्य विषयस्य सन्दर्भेण इयं स्थितिः भवति तस्य निर्देशार्थम् द्वितीयाविभक्तिः प्रयुज्यते ।",
+            "s3_ex1": "१. देवदत्तः <span class='hl-lakshana'>मातरम्</span> <span class='hl-karma'>अभि</span> साधुः । (मातुः विषये साधुभावः)",
+            "s3_ex2": "२. <span class='hl-lakshana'>हरिम्</span> <span class='hl-karma'>अभि</span> भक्तः । (हरेः विषये भक्तः)",
+            "s3_ex3": "३. <span class='hl-lakshana'>दुर्योधनम्</span> <span class='hl-karma'>अभि</span> क्रुद्धः । (दुर्योधनस्य विषये क्रोधः)",
+            "sec4_title": "४. वीप्सा अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा",
+            "sec4_desc": "वीप्सा इति शब्दस्य अर्थः 'पदार्थान् व्याप्तुम् इच्छा वीप्सा' - इति दीयते । यदा एका एव क्रिया एकप्रकारस्य सर्वेषाम् अपि वस्तूनां कृते भवति, तदा तस्याः निर्देशः वीप्सा इत्यनेन क्रियते । अस्याः वीप्सायाः सन्दर्भेण अभि इति शब्दस्य प्रकृतसूत्रेण कर्मप्रवचनीयसंज्ञा भवति । नित्यवीप्सयोः (८.१.४) इत्यनेन एतेषां शब्दानां द्वित्वम् अपि विधीयते ।",
+            "s4_ex1": "१. <span class='hl-lakshana'>वृक्षं वृक्षम्</span> <span class='hl-karma'>अभि</span> सिञ्चति । (प्रत्येकं वृक्षस्य सन्दर्भेण सिञ्चनक्रिया)",
+            "s4_ex2": "२. <span class='hl-lakshana'>गृहं गृहम्</span> <span class='hl-karma'>अभि</span> पश्यति । (प्रत्येकं गृहस्य विषये दर्शनक्रिया)",
+            "sec5_title": "५. सूत्रे प्रयुक्तस्य 'अभागे' इति शब्दस्य अर्थः",
+            "sec5_desc": "प्रकृतसूत्रे विद्यमानस्य 'अभागे' इति पदस्य अन्वयः पूर्वसूत्रे विद्यमानेन 'लक्षणेत्थम्भूताख्यानभागवीप्सासु' इति शब्देन सह भवति । पूर्वसूत्रे उक्तेभ्यः चतुर्भ्यः विषयेभ्यः 'भागः' इति विषयं वर्जयित्वा अन्येषाम् विषयाणाम् सन्दर्भेण 'अभि' शब्दस्य कर्मप्रवचनीयसंज्ञा भवति, इति स्पष्टीकर्तुम् 'अभागे' इति पदं स्थापितम् वर्तते । <b>भागस्य सन्दर्भेण प्रयुक्तस्य अभि-शब्दस्य कर्मप्रवचनीयसंज्ञा न भवति ।</b> यथा - <i>'यद् अत्र मम अभिष्यात् तद् दीयताम्'</i> अस्मिन् वाक्ये भागस्य सन्दर्भे प्रयुक्तस्य 'अभि' शब्दस्य उपसर्गसंज्ञा भवति, अतश्च उपसर्गप्रादुर्भ्यामस्तिर्यच्परः (८.३.८७) इत्यनेन सकारस्य षत्वम् (अभिष्यात्) कृतं दृश्यते ।",
+            "sec6_title": "६. अन्ये विशेषाः (प्रयोजनम्, सम्बन्धद्योतकः, समासः)",
+            "s6_sub1": "कर्मप्रवचनीयसंज्ञकः अभि-शब्दः अत्र सम्बन्धस्य द्योतकः",
+            "s6_desc1": "अभि इति कर्मप्रवचनीयसंज्ञकः लक्षणादीन् अर्थान् नैव निर्दिशति, अपितु सम्बन्धमात्रस्य निर्देशं करोति। (वृक्षम् अभि विद्योतते - अत्र लक्ष्यलक्षणसम्बन्धः। मातरम् अभि साधु - अत्र विषयविषयिभावसम्बन्धः। वृक्षं वृक्षम् अभि - अत्र साध्यसाधनभावसंबंधः)।",
+            "s6_sub2": "संज्ञायाः प्रयोजनम्",
+            "s6_desc2": "१. द्वितीयाविभक्तिविधानार्थम् (कर्मप्रवचनीययुक्ते द्वितीया)। २. उपसर्गसंज्ञाप्रतिषेधार्थम् (वृक्षं वृक्षम् अभि सिञ्चति - अत्र अभि इत्यस्य उपसर्गत्वं न भवति, येन सिञ्चति इत्यस्य सकारस्य अनिष्टं षत्वं न भवति)।",
+            "s6_sub3": "लक्षणस्य सन्दर्भेण 'अभि' इत्यनेन सह अव्ययीभावसमासः",
+            "s6_desc3": "लक्षणार्थे प्रयुक्तस्य अभि इत्यस्य 'लक्षणेनाभिप्रती आभिमुख्ये (२.१.१४)' इत्यनेन विकल्पेन अव्ययीभावसमासः अपि सम्भवति । यथा - अग्निम् अभि शलभाः पतन्ति = <b>अभ्यग्निं</b> शलभाः पतन्ति । एवमेव ग्रामम् अभि गच्छति = <b>अभिग्रामं</b> गच्छति ।",
+            "s6_sub4": "लक्षणादिषु एव किमर्थम्?",
+            "s6_desc4": "यत्र अभि इति शब्दः अन्येषु अर्थेषु प्रयुज्यते, तत्र कर्मप्रवचनीयसंज्ञा न भवति । यथा - <b>जलेन अभिषिञ्चति</b> इत्यत्र अभि इत्यस्य 'सर्वतः' अर्थः अस्ति । अत्र उपसर्गसंज्ञा भवति, अतः सिञ्चति इत्यस्य षत्वं (अभिषिञ्चति) भवति ।",
+            "kaumudi_title": "📖 सिद्धान्तकौमुदी-सङ्ग्रहः",
+            "kaumudi_vritti": "भागवर्जे लक्षणादावभिरुक्तसञ्ज्ञः स्यात् । हरिमभि वर्तते । भक्तो हरिमभि । देवं देवमभि सिञ्चति । अभागे किम् ? यदत्र ममाभिष्यात्तद्दीयताम् ॥",
+            "kaumudi_desc": "<b>कौमुद्याः विवरणम् :</b> अत्र कौमुदीकारेण 'लक्षणेत्थम्भूताख्यान...' इति पूर्वसूत्रेण सह अस्य 'अभिरभागे' इत्यस्य सम्बन्धं दर्शयित्वा भागं विहाय लक्षणादिषु अर्थेषु अभिः कर्मप्रवचनीयः भवति इति स्पष्टीक्रितम्। लक्षणे 'हरिम् अभि वर्तते', इत्थम्भूताख्याने 'भक्तो हरिम् अभि', वीप्सायां च 'देवं देवम् अभि सिञ्चति' इति उदाहृतम्। 'भाग' अर्थे तु 'अभि' न भवति (यदत्र ममाभिष्यात्) इति पूर्वमेव व्याख्यातम्।",
+            "k_ex1": "भक्तो हरिम् अभि ।",
+            "k_ex2": "वृक्षम् अभि विद्योतते विद्युत् ।",
+            "gameTitle": "🎮 ज्ञान-परीक्षा (Quiz)", "gameSubtitle": "प्रश्नानाम् उत्तरं दत्त्वा ज्ञानं दृढीकुर्वन्तु!",
+            "q1text": "<b>प्रश्नः १:</b> 'अभिरभागे' सूत्रेण 'अभि' इत्यस्य कस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा न भवति?", "q1o1": "लक्षणे", "q1o2": "भागे", "q1o3": "वीप्सायाम्",
+            "q2text": "<b>प्रश्नः २:</b> 'यद् अत्र मम अभिष्यात्' अत्र षत्वं किमर्थं जातम्?", "q2o1": "कर्मप्रवचनीयसंज्ञा अस्ति इति कारणेन", "q2o2": "भागार्थे उपसर्गत्वम् अस्ति इति कारणेन", "q2o3": "वीप्सा अस्ति इति कारणेन",
+            "q3text": "<b>प्रश्नः ३:</b> 'अग्निम् अभि शलभाः पतन्ति' इत्यस्य अव्ययीभावसमासरूपं किम्?", "q3o1": "अग्न्यभि", "q3o2": "अभ्यग्निम्", "q3o3": "अग्निमभि",
+            "successMsg": "🌟 उत्तमम्! भवान्/भवती एतत् सूत्रं सम्यक् ज्ञातवान्/ज्ञातवती।"
+        },
+        "kn": {
+            "nav_prev": "⬅ ಹಿಂದಿನ ಸೂತ್ರ (೫೫೨)", "nav_index": "🏠 ಮುಖಪುಟ", "nav_next": "ಮುಂದಿನ ಸೂತ್ರ (೫೫೪) ➡",
+            "meta_padaccheda": "ಪದಚ್ಛೇದಃ", "meta_anuvritti": "ಅನುವೃತ್ತಿಃ", "meta_adhikara": "ಅಧಿಕಾರಃ", "meta_sutraprakara": "ಸೂತ್ರಪ್ರಕಾರಃ",
+            "sutraNum": "ಸಿದ್ಧಾಂತ ಕೌಮುದೀ - ೫೫೩",
+            "vritti": "ಲಕ್ಷಣ, ಇತ್ಥಂಭೂತಾಖ್ಯಾನ, ಮತ್ತು ವೀಪ್ಸಾ - ಈ ಅರ್ಥಗಳಲ್ಲಿ ಬರುವ 'ಅಭಿ' ಶಬ್ದವು ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆಯನ್ನು ಪಡೆಯುತ್ತದೆ. (ಆದರೆ 'ಭಾಗ' ಅರ್ಥದಲ್ಲಿದ್ದಾಗ ಪಡೆಯುವುದಿಲ್ಲ).",
+            "legend1": "ಲಕ್ಷಣ-ಇತ್ಥಂಭೂತ-ವೀಪ್ಸಾ (ಅಭಾಗೇ)", "legend2": "ಅಭಿ", "legend3": "ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ",
+            "sec1_title": "೧. ಸೂತ್ರಾರ್ಥ", "sec1_desc": "ಹಿಂದಿನ ಸೂತ್ರದಲ್ಲಿ ಹೇಳಲಾದ ೪ ವಿಷಯಗಳ ಪೈಕಿ 'ಭಾಗ'ವನ್ನು ಹೊರತುಪಡಿಸಿ, ಉಳಿದ ಲಕ್ಷಣ, ಇತ್ಥಂಭೂತಾಖ್ಯಾನ, ಹಾಗೂ ವೀಪ್ಸಾ ಎಂಬ ೩ ಅರ್ಥಗಳಲ್ಲಿ 'ಅಭಿ' ಶಬ್ದಕ್ಕೆ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಬರುತ್ತದೆ ಎಂದು ಈ ಸೂತ್ರವು ತಿಳಿಸುತ್ತದೆ.",
+            "sec2_title": "೨. 'ಲಕ್ಷಣ' ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ",
+            "sec2_desc": "ಒಂದು ವಸ್ತುವನ್ನು ಆಧಾರವಾಗಿಟ್ಟುಕೊಂಡು ದಿಕ್ಕನ್ನು ಸೂಚಿಸುವುದಕ್ಕೆ 'ಲಕ್ಷಣ' ಎನ್ನುತ್ತಾರೆ. ಯಾವ ವಸ್ತುವಿನ ಆಧಾರದಿಂದ ದಿಕ್ಕನ್ನು ಸೂಚಿಸಲಾಗುತ್ತದೆಯೋ ಆ ವಸ್ತುವಿಗೆ ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ ಬರುತ್ತದೆ.",
+            "s2_ex1": "೧. ದೇವದತ್ತನು <span class='hl-lakshana'>ಹಳ್ಳಿಯತ್ತ</span> (<span class='hl-karma'>अभि</span>) ಹೋಗುತ್ತಿದ್ದಾನೆ.",
+            "s2_ex2": "೨. ರಾಮನು <span class='hl-lakshana'>ರಾವಣನತ್ತ</span> (<span class='hl-karma'>अभि</span>) ಬಾಣಗಳನ್ನು ಬಿಡುತ್ತಿದ್ದಾನೆ.",
+            "s2_ex3": "೩. ಮಿಡತೆಗಳು <span class='hl-lakshana'>ಬೆಂಕಿಯತ್ತ</span> (<span class='hl-karma'>अभि</span>) ಹಾರುತ್ತಿವೆ.",
+            "s2_ex4": "೪. ಮಿಂಚು <span class='hl-lakshana'>ಮರದತ್ತ</span> (<span class='hl-karma'>अभि</span>) ಮಿಂಚುತ್ತಿದೆ.",
+            "sec3_title": "೩. 'ಇತ್ಥಂಭೂತಾಖ್ಯಾನ' ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ",
+            "sec3_desc": "ಒಬ್ಬರ ಬಗ್ಗೆ ಅಥವಾ ಒಂದು ವಿಷಯದ ಬಗ್ಗೆ ಇರುವ ನಿರ್ದಿಷ್ಟ ಸ್ಥಿತಿಯನ್ನು (ಗುಣ/ಭಾವನೆಯನ್ನು) ಹೇಳುವುದು. ಯಾರ ವಿಷಯದಲ್ಲಿ ಆ ಸ್ಥಿತಿ ಇರುತ್ತದೆಯೋ ಅದಕ್ಕೆ ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ ಬರುತ್ತದೆ.",
+            "s3_ex1": "೧. ದೇವದತ್ತನು <span class='hl-lakshana'>ತಾಯಿಯ</span> ವಿಷಯದಲ್ಲಿ (<span class='hl-karma'>अभि</span>) ಒಳ್ಳೆಯವನು (ಸಾಧುಃ).",
+            "s3_ex2": "೨. ಇವನು <span class='hl-lakshana'>ಹರಿಯ</span> ವಿಷಯದಲ್ಲಿ (<span class='hl-karma'>अभि</span>) ಭಕ್ತನಾಗಿದ್ದಾನೆ.",
+            "s3_ex3": "೩. ಭೀಮನು <span class='hl-lakshana'>ದುರ್ಯೋಧನನ</span> ಮೇಲೆ (<span class='hl-karma'>अभि</span>) ಕೋಪಗೊಂಡಿದ್ದಾನೆ.",
+            "sec4_title": "೪. 'ವೀಪ್ಸಾ' ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ",
+            "sec4_desc": "ಒಂದೇ ಕ್ರಿಯೆಯು ಎಲ್ಲ ವಸ್ತುಗಳಿಗೂ ಅನ್ವಯವಾಗುತ್ತಿದ್ದರೆ (ವ್ಯಾಪ್ತಿ/ಪುನರಾವೃತ್ತಿ) ಅದು ವೀಪ್ಸಾ. ಇಲ್ಲಿ 'नित्यवीप्सयोः' ಸೂತ್ರದಿಂದ ಪದವು ಎರಡು ಬಾರಿ ಬರುತ್ತದೆ.",
+            "s4_ex1": "೧. <span class='hl-lakshana'>ಪ್ರತಿ ಮರಕ್ಕೂ</span> (<span class='hl-karma'>अभि</span>) ನೀರು ಹಾಕುತ್ತಿದ್ದಾನೆ.",
+            "s4_ex2": "೨. <span class='hl-lakshana'>ಪ್ರತಿ ಮನೆಗೂ</span> (<span class='hl-karma'>अभि</span>) ಭೇಟಿ ನೀಡುತ್ತಿದ್ದಾನೆ.",
+            "sec5_title": "೫. 'ಅಭಾಗೇ' ಎಂದರೆ 'ಭಾಗ' ಅರ್ಥದಲ್ಲಿ ಬರುವುದಿಲ್ಲ",
+            "sec5_desc": "ಹಿಂದಿನ ಸೂತ್ರದಿಂದ 'ಲಕ್ಷಣ-ಇತ್ಥಂಭೂತಾಖ್ಯಾನ-ಭಾಗ-ವೀಪ್ಸಾಸು' ಎಂಬ ಪದವು ಇಲ್ಲಿಗೂ ಬರುತ್ತದೆ. ಆದರೆ ಆ ೪ ಅರ್ಥಗಳ ಪೈಕಿ 'ಭಾಗ' ಅರ್ಥದಲ್ಲಿ 'ಅಭಿ' ಶಬ್ದಕ್ಕೆ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಬರುವುದಿಲ್ಲ. ಉದಾಹರಣೆಗೆ: <i>'ಯದ್ ಅತ್ರ ಮಮ ಅಭಿಷ್ಯಾತ್ ತದ್ ದೀಯತಾಮ್'</i> (ಇಲ್ಲಿ ನನ್ನ ಪಾಲಿಗೆ ಏನಿದೆಯೋ ಅದು ಸಿಗಲಿ). ಇಲ್ಲಿ 'ಅಭಿ' ಉಪಸರ್ಗವಾಗಿಯೇ ಉಳಿಯುವುದರಿಂದ 'ಷತ್ವ' (ಅಭಿಷ್ಯಾತ್) ಬರುತ್ತದೆ.",
+            "sec6_title": "೬. ಇತರ ವಿಶೇಷಗಳು (ಪ್ರಯೋಜನ, ಸಮಾಸ ಇತ್ಯಾದಿ)",
+            "s6_sub1": "ಕರ್ಮಪ್ರವಚನೀಯಗಳು ಇಲ್ಲಿ ಸಂಬಂಧದ ದ್ಯೋತಕಗಳು",
+            "s6_desc1": "'ಅಭಿ' ಶಬ್ದವು ನೇರವಾಗಿ ಲಕ್ಷಣಾದಿ ಅರ್ಥಗಳನ್ನು ಹೇಳುವುದಿಲ್ಲ, ಬದಲಾಗಿ ಆ ಅರ್ಥಗಳ ಮೂಲಕ ಏರ್ಪಡುವ ಸಂಬಂಧವನ್ನು ಮಾತ್ರ ಸೂಚಿಸುತ್ತದೆ.",
+            "s6_sub2": "ಸಂಜ್ಞೆಯ ಪ್ರಯೋಜನ",
+            "s6_desc2": "೧. ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ ಬರುವುದು. ೨. ಉಪಸರ್ಗ ಸಂಜ್ಞೆ ಇಲ್ಲದಿರುವುದು (ಇದರಿಂದ 'ಸಿಂಚತಿ' ಎಂಬಲ್ಲಿ 'ಷತ್ವ' ಬರುವುದಿಲ್ಲ).",
+            "s6_sub3": "'ಲಕ್ಷಣ' ಅರ್ಥದಲ್ಲಿ ಅವ್ಯಯೀಭಾವ ಸಮಾಸ",
+            "s6_desc3": "ಲಕ್ಷಣಾರ್ಥದಲ್ಲಿ 'ಅಭಿ' ಬಂದಾಗ ವಿಕಲ್ಪವಾಗಿ ಅವ್ಯಯೀಭಾವ ಸಮಾಸ ಬರುತ್ತದೆ. (ಉದಾ: ಅಗ್ನಿಮ್ ಅಭಿ = <b>ಅಭ್ಯಗ್ನಿಮ್</b>, ಗ್ರಾಮಮ್ ಅಭಿ = <b>ಅಭಿಗ್ರಾಮಮ್</b>).",
+            "s6_sub4": "ಲಕ್ಷಣಾದಿ ಅರ್ಥಗಳಲ್ಲಿ ಮಾತ್ರವೇಕೆ?",
+            "s6_desc4": "ಒಂದು ವೇಳೆ ಬೇರೆ ಅರ್ಥದಲ್ಲಿ ಬಂದರೆ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಬರುವುದಿಲ್ಲ. ಉದಾ: <b>जलेन अभिषिञ्चति</b> (ಇಲ್ಲಿ ಅಭಿ = ಎಲ್ಲ ಕಡೆಗೂ). ಇಲ್ಲಿ 'ಅಭಿ'ಗೆ ಉಪಸರ್ಗ ಸಂಜ್ಞೆ ಬರುವುದರಿಂದ 'ಷತ್ವ' ಬಂದು 'ಅಭಿಷಿಂಚತಿ' ಎಂದಾಗುತ್ತದೆ.",
+            "kaumudi_title": "📖 ಸಿದ್ಧಾಂತ ಕೌಮುದೀ ಸಂಗ್ರಹ",
+            "kaumudi_vritti": "ಭಾಗ ಅರ್ಥವನ್ನು ಬಿಟ್ಟು ಲಕ್ಷಣಾದಿ ಅರ್ಥಗಳಲ್ಲಿ 'ಅಭಿ' ಉಪಸರ್ಗವು ಕರ್ಮಪ್ರವಚನೀಯವಾಗುತ್ತದೆ. ಹರಿಯತ್ತ ಬರುತ್ತಿದ್ದಾನೆ ಇತ್ಯಾದಿ.",
+            "kaumudi_desc": "<b>ಕೌಮುದಿಯ ವಿವರಣೆ:</b> ಸಿದ್ಧಾಂತ ಕೌಮುದಿಯಲ್ಲಿ 'लक्षणेत्थम्भूताख्यान...' ಮತ್ತು 'अभिरभागे' ಈ ಎರಡೂ ಸೂತ್ರಗಳ ಅರ್ಥವನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳಲಾಗಿದೆ. 'ಭಾಗ' ಅರ್ಥದಲ್ಲಿ 'ಅಭಿ' ಬರುವುದಿಲ್ಲ (ಅಭಿಷ್ಯಾತ್) ಎಂದು ದೃಷ್ಟಾಂತದ ಮೂಲಕ ತಿಳಿಸಿದ್ದಾರೆ.",
+            "k_ex1": "ಭಕ್ತನು ಹರಿಯ ವಿಷಯದಲ್ಲಿ (<span class='hl-karma'>अभि</span>)",
+            "k_ex2": "ಮಿಂಚು ಮರದತ್ತ (<span class='hl-karma'>अभि</span>) ಮಿಂಚುತ್ತಿದೆ",
+            "gameTitle": "🎮 ಜ್ಞಾನ ಪರೀಕ್ಷೆ (Quiz)", "gameSubtitle": "ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ ಜ್ಞಾನವನ್ನು ದೃಢಪಡಿಸಿಕೊಳ್ಳಿ!",
+            "q1text": "<b>ಪ್ರಶ್ನೆ ೧:</b> 'अभिरभागे' ಸೂತ್ರದ ಪ್ರಕಾರ 'ಅಭಿ' ಶಬ್ದಕ್ಕೆ ಯಾವ ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಬರುವುದಿಲ್ಲ?", "q1o1": "ಲಕ್ಷಣದಲ್ಲಿ", "q1o2": "ಭಾಗದಲ್ಲಿ", "q1o3": "ವೀಪ್ಸಾದಲ್ಲಿ",
+            "q2text": "<b>ಪ್ರಶ್ನೆ ೨:</b> 'यद् अत्र मम अभिष्यात्' ಇಲ್ಲಿ ಷತ್ವ ಬರಲು ಕಾರಣವೇನು?", "q2o1": "ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಇರುವುದರಿಂದ", "q2o2": "ಭಾಗದ ಅರ್ಥದಲ್ಲಿ ಉಪಸರ್ಗ ಸಂಜ್ಞೆ ಇರುವುದರಿಂದ", "q2o3": "ವೀಪ್ಸಾ ಇರುವುದರಿಂದ",
+            "q3text": "<b>ಪ್ರಶ್ನೆ ೩:</b> 'अग्निम् अभि शलभाः पतन्ति' - ಇದರ ಅವ್ಯಯೀಭಾವ ಸಮಾಸ ರೂಪ ಯಾವುದು?", "q3o1": "ಅಗ್ನ್ಯಭಿ", "q3o2": "ಅಭ್ಯಗ್ನಿಮ್", "q3o3": "ಅಗ್ನಿಮಭಿ",
+            "successMsg": "🌟 ಅದ್ಭುತ! ನೀವು ಈ ಸೂತ್ರವನ್ನು ಸರಿಯಾಗಿ ಅರ್ಥಮಾಡಿಕೊಂಡಿದ್ದೀರಿ."
+        },
+        "hi": {
+            "nav_prev": "⬅ पूर्व सूत्र (५५२)", "nav_index": "🏠 मुखपृष्ठ", "nav_next": "अगला सूत्र (५५४) ➡",
+            "meta_padaccheda": "पदच्छेदः", "meta_anuvritti": "अनुवृत्तिः", "meta_adhikara": "अधिकारः", "meta_sutraprakara": "सूत्रप्रकारः",
+            "sutraNum": "सिद्धान्तकौमुदी - ५५३",
+            "vritti": "लक्षण, इत्थम्भूताख्यान और वीप्सा के अर्थ में 'अभि' कर्मप्रवचनीय होता है (किन्तु 'भाग' के अर्थ में नहीं)।",
+            "legend1": "लक्षण-इत्थम्भूत-वीप्सा (अभागे)", "legend2": "अभि", "legend3": "द्वितीया विभक्ति",
+            "sec1_title": "१. सूत्रार्थ", "sec1_desc": "पिछले सूत्र में कहे गए ४ अर्थों में से 'भाग' को छोड़कर शेष ३ अर्थों (लक्षण, इत्थम्भूताख्यान और वीप्सा) में 'अभि' शब्द की कर्मप्रवचनीय संज्ञा होती है।",
+            "sec2_title": "२. 'लक्षण' अर्थ में कर्मप्रवचनीय संज्ञा",
+            "sec2_desc": "किसी पदार्थ को आधार मानकर दिशा का संकेत करना 'लक्षण' है।",
+            "s2_ex1": "१. देवदत्त <span class='hl-lakshana'>गाँव</span> की ओर (<span class='hl-karma'>अभि</span>) जाता है।",
+            "s2_ex2": "२. राम <span class='hl-lakshana'>रावण</span> की ओर (<span class='hl-karma'>अभि</span>) बाण चलाते हैं।",
+            "s2_ex3": "३. पतंगे <span class='hl-lakshana'>अग्नि</span> की ओर (<span class='hl-karma'>अभि</span>) गिरते हैं।",
+            "s2_ex4": "४. बिजली <span class='hl-lakshana'>वृक्ष</span> की ओर (<span class='hl-karma'>अभि</span>) चमकती है।",
+            "sec3_title": "३. 'इत्थम्भूताख्यान' अर्थ में कर्मप्रवचनीय संज्ञा",
+            "sec3_desc": "किसी विषय के सन्दर्भ में प्राप्त स्थिति (गुण/भाव) को बताना।",
+            "s3_ex1": "१. <span class='hl-lakshana'>माता</span> के प्रति (<span class='hl-karma'>अभि</span>) साधु (अच्छा) है।",
+            "s3_ex2": "२. <span class='hl-lakshana'>हरि</span> के प्रति (<span class='hl-karma'>अभि</span>) भक्त है।",
+            "s3_ex3": "३. <span class='hl-lakshana'>दुर्योधन</span> के प्रति (<span class='hl-karma'>अभि</span>) क्रोधित है।",
+            "sec4_title": "४. 'वीप्सा' अर्थ में कर्मप्रवचनीय संज्ञा",
+            "sec4_desc": "जब एक ही क्रिया सभी वस्तुओं के लिए व्याप्त हो, तो उसे वीप्सा कहते हैं।",
+            "s4_ex1": "१. <span class='hl-lakshana'>प्रत्येक वृक्ष</span> को (<span class='hl-karma'>अभि</span>) सींचता है।",
+            "s4_ex2": "२. <span class='hl-lakshana'>प्रत्येक घर</span> को (<span class='hl-karma'>अभि</span>) देखता है।",
+            "sec5_title": "५. 'अभागे' का अर्थ ('भाग' अर्थ में नहीं)",
+            "sec5_desc": "इस सूत्र में स्पष्ट किया गया है कि 'भाग' (हिस्सा) के अर्थ में 'अभि' की कर्मप्रवचनीय संज्ञा नहीं होती। उदा: <i>'यद् अत्र मम अभिष्यात्'</i> (यहाँ जो मेरे हिस्से में हो)। यहाँ 'अभि' उपसर्ग ही रहता है, इसलिए 'षत्व' (अभिष्यात्) होता है।",
+            "sec6_title": "६. अन्य विशेष (प्रयोजन, समास आदि)",
+            "s6_sub1": "कर्मप्रवचनीय सम्बन्ध का द्योतक",
+            "s6_desc1": "'अभि' साक्षात् लक्षण आदि अर्थों को नहीं बताता, बल्कि उनसे सूचित सम्बन्ध मात्र को दर्शाता है।",
+            "s6_sub2": "संज्ञा का प्रयोजन",
+            "s6_desc2": "१. द्वितीया विभक्ति करना। २. उपसर्ग संज्ञा को रोकना (जिससे 'सिञ्चति' में 'ष' नहीं होता)।",
+            "s6_sub3": "अव्ययीभाव समास",
+            "s6_desc3": "लक्षण अर्थ में 'अभि' का विकल्प से अव्ययीभाव समास होता है। (उदा: अग्निम् अभि = <b>अभ्यग्निम्</b>)।",
+            "s6_sub4": "लक्षणादि में ही क्यों?",
+            "s6_desc4": "यदि अन्य अर्थ में आएँ तो कर्मप्रवचनीय संज्ञा नहीं होगी। उदा: <b>जलेन अभिषिञ्चति</b> (अभि = चारों ओर)। यहाँ 'ष' (अभिषिञ्चति) हो जाता है।",
+            "kaumudi_title": "📖 सिद्धान्तकौमुदी-सङ्ग्रहः",
+            "kaumudi_vritti": "भाग को छोड़कर लक्षणादि अर्थों में अभि की उक्त संज्ञा होती है।",
+            "kaumudi_desc": "<b>कौमुदी विवरण:</b> सिद्धान्त कौमुदी में स्पष्ट किया गया है कि 'भाग' अर्थ में 'अभि' की कर्मप्रवचनीय संज्ञा नहीं होती है, यह केवल लक्षणादि में ही होती है।",
+            "k_ex1": "भक्त हरि के प्रति (<span class='hl-karma'>अभि</span>)",
+            "k_ex2": "बिजली वृक्ष की ओर (<span class='hl-karma'>अभि</span>) चमकती है",
+            "gameTitle": "🎮 ज्ञान परीक्षा (Quiz)", "gameSubtitle": "प्रश्नों के उत्तर देकर अपना ज्ञान दृढ़ करें!",
+            "q1text": "<b>प्रश्न १:</b> 'अभिरभागे' सूत्र से 'अभि' की किस अर्थ में कर्मप्रवचनीय संज्ञा नहीं होती?", "q1o1": "लक्षण में", "q1o2": "भाग में", "q1o3": "वीप्सा में",
+            "q2text": "<b>प्रश्न २:</b> 'यद् अत्र मम अभिष्यात्' में षत्व क्यों हुआ?", "q2o1": "कर्मप्रवचनीय संज्ञा होने के कारण", "q2o2": "भाग अर्थ में उपसर्ग होने के कारण", "q2o3": "वीप्सा होने के कारण",
+            "q3text": "<b>प्रश्न ३:</b> 'अग्निम् अभि शलभाः पतन्ति' का अव्ययीभाव समास रूप क्या होगा?", "q3o1": "अग्न्यभि", "q3o2": "अभ्यग्निम्", "q3o3": "अग्निमभि",
+            "successMsg": "🌟 बहुत उत्तम! आपने इस सूत्र को अच्छी तरह समझ लिया है।"
+        },
+        "en": {
+            "nav_prev": "⬅ Previous Sutra (552)", "nav_index": "🏠 Index", "nav_next": "Next Sutra (554) ➡",
+            "meta_padaccheda": "Padaccheda", "meta_anuvritti": "Anuvritti", "meta_adhikara": "Adhikara", "meta_sutraprakara": "Sutra Type",
+            "sutraNum": "Siddhanta Kaumudi - 553",
+            "vritti": "The word 'abhi' gets the Karmapravachaniya designation in the sense of Lakshana, Itthambhutakhyana, and Vipsa (but NOT in the sense of Bhaga).",
+            "legend1": "Lakshana-Ittham-Vipsa (No Bhaga)", "legend2": "Abhi", "legend3": "2nd Case (Dvitiya)",
+            "sec1_title": "1. Meaning of the Sutra",
+            "sec1_desc": "Out of the 4 meanings mentioned in the previous sutra, 'abhi' becomes a Karmapravachaniya in 3 of them (Lakshana, Itthambhutakhyana, Vipsa), excluding 'Bhaga' (share).",
+            "sec2_title": "2. 'Lakshana' (Indicator/Direction)",
+            "sec2_desc": "Indicating a direction based on a mark/object. Takes 2nd case.",
+            "s2_ex1": "1. Devadatta goes towards (<span class='hl-karma'>abhi</span>) the <span class='hl-lakshana'>village</span>.",
+            "s2_ex2": "2. Rama shoots arrows at (<span class='hl-karma'>abhi</span>) <span class='hl-lakshana'>Ravana</span>.",
+            "s2_ex3": "3. Moths fly towards (<span class='hl-karma'>abhi</span>) the <span class='hl-lakshana'>fire</span>.",
+            "s2_ex4": "4. Lightning flashes towards (<span class='hl-karma'>abhi</span>) the <span class='hl-lakshana'>tree</span>.",
+            "sec3_title": "3. 'Itthambhutakhyana' (State/Condition)",
+            "sec3_desc": "Describing a specific state, quality, or emotion directed towards an object.",
+            "s3_ex1": "1. He is good towards (<span class='hl-karma'>abhi</span>) his <span class='hl-lakshana'>mother</span>.",
+            "s3_ex2": "2. He is devoted towards (<span class='hl-karma'>abhi</span>) <span class='hl-lakshana'>Hari</span>.",
+            "s3_ex3": "3. He is angry at (<span class='hl-karma'>abhi</span>) <span class='hl-lakshana'>Duryodhana</span>.",
+            "sec4_title": "4. 'Vipsa' (Pervasion/Repetition)",
+            "sec4_desc": "Indicating pervasion or repetition (doing an action to each and every object).",
+            "s4_ex1": "1. He waters <span class='hl-lakshana'>each and every tree</span> (<span class='hl-karma'>abhi</span>).",
+            "s4_ex2": "2. He looks at <span class='hl-lakshana'>each and every house</span> (<span class='hl-karma'>abhi</span>).",
+            "sec5_title": "5. Meaning of 'Abhage' (Except 'Bhaga')",
+            "sec5_desc": "In the sense of 'Bhaga' (share), 'abhi' does NOT get the Karmapravachaniya designation. Example: <i>'yad atra mama abhishyat'</i> (whatever falls to my share here). Since it remains an Upasarga, the 'sa' changes to 'sha' (abhishyat).",
+            "sec6_title": "6. Other Details (Purpose, Compound)",
+            "s6_sub1": "Indicator of Relation",
+            "s6_desc1": "'Abhi' merely indicates the relationship derived from these meanings, not the meanings themselves directly.",
+            "s6_sub2": "Purpose of the Designation",
+            "s6_desc2": "1. To apply Dvitiya Vibhakti. 2. To prevent Upasarga designation (prevents unwanted 'shatva').",
+            "s6_sub3": "Avyayibhava Compound",
+            "s6_desc3": "When denoting Lakshana, 'abhi' can optionally form an Avyayibhava compound (e.g., agnim abhi = <b>abhyagnim</b>).",
+            "s6_sub4": "Why only these meanings?",
+            "s6_desc4": "If used in other senses, it remains an Upasarga. Example: <b>jalena abhishinchati</b> (abhi = all around). It gets 'shatva'.",
+            "kaumudi_title": "📖 Siddhanta Kaumudi Excerpt",
+            "kaumudi_vritti": "Except for Bhaga, Abhi gets this designation in Lakshana etc.",
+            "kaumudi_desc": "<b>Kaumudi Details:</b> In the Siddhanta Kaumudi, it is clarified that 'abhi' does not take the designation in the sense of 'Bhaga' (share), resulting in shatva (abhishyat).",
+            "k_ex1": "A devotee towards (<span class='hl-karma'>abhi</span>) Hari.",
+            "k_ex2": "Lightning flashes towards (<span class='hl-karma'>abhi</span>) the tree.",
+            "gameTitle": "🎮 Knowledge Test (Quiz)", "gameSubtitle": "Answer the questions to proceed!",
+            "q1text": "<b>Question 1:</b> According to 'Abhirabhage', in which sense does 'abhi' NOT become a Karmapravachaniya?", "q1o1": "Lakshana", "q1o2": "Bhaga", "q1o3": "Vipsa",
+            "q2text": "<b>Question 2:</b> Why did 'shatva' occur in 'yad atra mama abhishyat'?", "q2o1": "Because it's a Karmapravachaniya", "q2o2": "Because it remains an Upasarga in 'Bhaga' sense", "q2o3": "Because of Vipsa",
+            "q3text": "<b>Question 3:</b> What is the Avyayibhava form of 'agnim abhi'?", "q3o1": "Agnyabhi", "q3o2": "Abhyagnim", "q3o3": "Agnimabhi",
+            "successMsg": "🌟 Excellent! You have understood this Sutra perfectly."
+        }
+    };
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
