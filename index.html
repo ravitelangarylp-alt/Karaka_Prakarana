@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कारक-प्रकरण यन्त्रम्</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&family=Laila:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Laila', sans-serif;
+            background-color: #f9f6f0;
+            margin: 0;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header-box {
+            background-color: #fff;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139,0,0,0.08);
+            border-top: 8px solid #8B0000;
+            position: relative;
+        }
+        .lang-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #fdf5f5;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #fadcdc;
+        }
+        .lang-container select {
+            background: transparent;
+            border: none;
+            font-family: 'Laila', sans-serif;
+            font-weight: 600;
+            color: #8B0000;
+            cursor: pointer;
+            outline: none;
+            font-size: 1em;
+        }
+        h1 {
+            font-family: 'Inknut Antiqua', serif;
+            color: #8B0000;
+            margin: 20px 0 10px 0;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-top: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .sutra-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .sutra-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(139,0,0,0.12);
+            border-color: #8B0000;
+        }
+        .sk-num {
+            background-color: #fdf5f5;
+            color: #8B0000;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 1px solid #fadcdc;
+        }
+        .sutra-text {
+            font-family: 'Inknut Antiqua', serif;
+            font-size: 1.3em;
+            color: #1565c0;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .ash-num {
+            color: #777;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <div class="lang-container">
+            <span style="color:#8B0000; font-size:1.2em; vertical-align: middle;">🌐</span>
+            <select id="lang-switch" onchange="changeLanguage()">
+                <option value="sa" selected>संस्कृतम्</option>
+                <option value="kn">ಕನ್ನಡ</option>
+                <option value="hi">हिन्दी</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        
+        <h1 id="main-title">कारक-प्रकरण यन्त्रम्</h1>
+        <div class="subtitle" id="main-subtitle">समग्रं व्याकरण-अध्ययन-तन्त्रम्</div>
+    </div>
+
+    <div class="grid-container">
+        
+        <!-- Existing Sutras -->
+        <a href="546.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५४६</div>
+            <div class="sutra-text">प्रातिपदिकार्थलिङ्गपरिमाण...</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.४६)</div>
+        </a>
+        <a href="547.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५४७</div>
+            <div class="sutra-text">सम्बोधने च</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.४७)</div>
+        </a>
+        <a href="548.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५४८</div>
+            <div class="sutra-text">कर्तुरीप्सिततमं कर्म</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.४९)</div>
+        </a>
+        <a href="550.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५०</div>
+            <div class="sutra-text">हीने</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.८६)</div>
+        </a>
+        <a href="551.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५१</div>
+            <div class="sutra-text">उपोऽधिके च</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.८७)</div>
+        </a>
+
+        <!-- Upcoming 25 Sutras (Placeholders) -->
+        <a href="552.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५२</div>
+            <div class="sutra-text">लक्षणेत्थम्भूताख्यानभागवीप्सासु...</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.९०)</div>
+        </a>
+        <a href="553.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५३</div>
+            <div class="sutra-text">अभिरभागे</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.९१)</div>
+        </a>
+        <a href="554.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५४</div>
+            <div class="sutra-text">प्रतिः प्रतिनिधिप्रतिदानयोः</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.९२)</div>
+        </a>
+        <a href="555.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५५</div>
+            <div class="sutra-text">अधिरीश्वरे</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.९७)</div>
+        </a>
+        <a href="556.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५६</div>
+            <div class="sutra-text">विभाषा कृञि</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.९८)</div>
+        </a>
+        <a href="557.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५७</div>
+            <div class="sutra-text">कालाध्वनोरत्यन्तसंयोगे</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.५)</div>
+        </a>
+        <a href="558.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५८</div>
+            <div class="sutra-text">स्वतन्त्रः कर्ता</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.५४)</div>
+        </a>
+        <a href="559.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५५९</div>
+            <div class="sutra-text">तत्प्रयोजको हेतुश्च</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.५५)</div>
+        </a>
+        <a href="560.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६०</div>
+            <div class="sutra-text">साधकतमं करणम्</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.४२)</div>
+        </a>
+        <a href="561.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६१</div>
+            <div class="sutra-text">कर्तृकरणयोस्तृतीया</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.१८)</div>
+        </a>
+        <a href="562.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६२</div>
+            <div class="sutra-text">प्रकृत्यादिभ्य उपसङ्ख्यानम्</div>
+            <div class="ash-num">वार्त्तिकम्</div>
+        </a>
+        <a href="563.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६३</div>
+            <div class="sutra-text">दिवः कर्म च</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.४३)</div>
+        </a>
+        <a href="564.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६४</div>
+            <div class="sutra-text">अपवर्गे तृतीया</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.६)</div>
+        </a>
+        <a href="565.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६५</div>
+            <div class="sutra-text">सहयुक्तेऽप्रधाने</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.१९)</div>
+        </a>
+        <a href="566.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६६</div>
+            <div class="sutra-text">येनाङ्गविकारः</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.२०)</div>
+        </a>
+        <a href="567.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६७</div>
+            <div class="sutra-text">इत्थम्भूतलक्षणे</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.२१)</div>
+        </a>
+        <a href="568.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६८</div>
+            <div class="sutra-text">संज्ञोन्यतरस्यां कर्मणि</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.३२)</div>
+        </a>
+        <a href="569.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५६९</div>
+            <div class="sutra-text">हेतौ</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.२३)</div>
+        </a>
+        <a href="570.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५७०</div>
+            <div class="sutra-text">कर्मणा यमभिप्रैति स सम्प्रदानम्</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.३२)</div>
+        </a>
+        <a href="571.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५७१</div>
+            <div class="sutra-text">चतुर्थी सम्प्रदाने</div>
+            <div class="ash-num">अष्टाध्यायी (२.३.१३)</div>
+        </a>
+        <a href="572.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५७२</div>
+            <div class="sutra-text">रुच्यर्थानां प्रीयमाणः</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.३३)</div>
+        </a>
+        <a href="573.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५७3</div>
+            <div class="sutra-text">श्लाघह्नुङ्स्थाशपां ज्ञीप्स्यमानः</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.३४)</div>
+        </a>
+        <a href="574.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५७४</div>
+            <div class="sutra-text">धारेरुत्तमर्णः</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.३५)</div>
+        </a>
+        <a href="575.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५७५</div>
+            <div class="sutra-text">स्पृहेरीप्सितः</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.३६)</div>
+        </a>
+        <a href="576.html" class="sutra-card">
+            <div class="sk-num">कौमुदी - ५७६</div>
+            <div class="sutra-text">क्रुधद्रुहेर्ष्यासूयार्थानां यं प्रति कोपः</div>
+            <div class="ash-num">अष्टाध्यायी (१.४.३७)</div>
+        </a>
+    </div>
+
+    <!-- Script for Translating the Index Page -->
+    <script>
+        const indexTranslations = {
+            "sa": { "title": "कारक-प्रकरण यन्त्रम्", "subtitle": "समग्रं व्याकरण-अध्ययन-तन्त्रम्" },
+            "kn": { "title": "ಕಾರಕ-ಪ್ರಕರಣ ಯಂತ್ರ", "subtitle": "ಸಮಗ್ರ ವ್ಯಾಕರಣ ಅಧ್ಯಯನ ವ್ಯವಸ್ಥೆ" },
+            "hi": { "title": "कारक-प्रकरण यन्त्र", "subtitle": "समग्र व्याकरण अध्ययन प्रणाली" },
+            "en": { "title": "Karaka Prakarana Machine", "subtitle": "Interactive Grammar Learning System" }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById('lang-switch').value;
+            document.getElementById('main-title').innerText = indexTranslations[lang]["title"];
+            document.getElementById('main-subtitle').innerText = indexTranslations[lang]["subtitle"];
+        }
+    </script>
+
+</body>
+</html>

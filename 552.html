@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>५५२ - लक्षणेत्थम्भूताख्यानभागवीप्सासु प्रतिपर्यनवः</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&family=Laila:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        .nav-btn {
+            background-color: #8B0000;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(139,0,0,0.2);
+        }
+        .nav-btn:hover {
+            background-color: #600000;
+            transform: translateY(-2px);
+        }
+        
+        /* Accordion Styles */
+        details.custom-accordion {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid #1565c0;
+            overflow: hidden;
+        }
+        details.custom-accordion summary {
+            padding: 18px 25px;
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #1565c0;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        details.custom-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+        details.custom-accordion summary:hover {
+            background-color: #f0f7ff;
+        }
+        details.custom-accordion summary .icon {
+            font-size: 1.5em;
+            color: #8B0000;
+            transition: transform 0.3s ease;
+        }
+        details.custom-accordion[open] summary .icon {
+            transform: rotate(45deg);
+        }
+        details.custom-accordion[open] summary {
+            border-bottom: 1px solid #eaeaea;
+        }
+        .details-content {
+            padding: 25px;
+            background-color: #fdfdfd;
+        }
+        .detailed-desc {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        /* 2-Column Example Grid */
+        .ex-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .ex-card-inner {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+        .ex-card-inner img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .ex-card-inner p {
+            margin: 0;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        @media(max-width: 768px) {
+            .ex-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="lang-container">
+        <span style="color:#8B0000; font-size:1.2em; vertical-align: middle;">🌐</span>
+        <select id="lang-switch" onchange="changeLanguage()">
+            <option value="sa" selected>संस्कृतम् (Sanskrit)</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <!-- Top Navigation -->
+    <div class="nav-buttons">
+        <a href="551.html" class="nav-btn" data-i18n="nav_prev">⬅ पूर्वसूत्रम् (५५१)</a>
+        <a href="index.html" class="nav-btn" data-i18n="nav_index">🏠 मुखपृष्ठम्</a>
+        <a href="553.html" class="nav-btn" data-i18n="nav_next">अग्रिमसूत्रम् (५५३) ➡</a>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header-card">
+        <div class="level-badge" data-i18n="sutraNum">सिद्धान्तकौमुदी - ५५२</div>
+        
+        <h1 class="special-word sutra-title" style="font-size: 1.8em;">
+            लक्षणेत्थम्भूताख्यानभागवीप्सासु प्रतिपर्यनवः <span class="ashtadhyayi-num">(१.४.९०)</span>
+        </h1>
+        
+        <div class="sutra-vritti">
+            <p style="margin: 0;" data-i18n="vritti">एष्वर्थेषु विषयभूतेषु प्रत्यादय उक्तसंज्ञाः स्युः । लक्षणे, वृक्षं प्रति, पर्यनु वा विद्योतते विद्युत् । इत्थंभूताख्याने, भक्तो विष्णुं प्रति, पर्यनु वा । भागे, लक्ष्मीर्हरिं प्रति, पर्यनु वा । हरेर्भाग इत्यर्थः । वीप्सायां, वृक्षंवृक्षं प्रति पर्यनु वा सिञ्चति । अत्रोपसर्गत्वाभावान्न षत्वम् । एषु किम् ? परिषिञ्चति ॥</p>
+        </div>
+    </div>
+
+    <!-- Color Legend -->
+    <div class="legend-box">
+        <div><span class="hl-lakshana" data-i18n="legend1">लक्षण-इत्थम्भूत-भाग-वीप्साः</span></div>
+        <div>+</div>
+        <div><span class="hl-karma" data-i18n="legend2">प्रति / परि / अनु</span></div>
+        <div>=</div>
+        <div><span class="hl-phala" data-i18n="legend3">द्वितीया विभक्तिः</span></div>
+    </div>
+
+    <!-- 1. Meaning -->
+    <div class="content-box" style="margin-bottom: 25px;">
+        <h3 style="color: #1565c0; margin-top: 0; border-bottom: 2px dashed #eaeaea; padding-bottom: 10px;" data-i18n="sec1_title">१. सूत्रार्थः</h3>
+        <p data-i18n="sec1_desc">लक्षणम्, इत्थम्भूताख्यानम्, भागः तथा च वीप्सा - एतेषु सन्दर्भेषु प्रयुक्ताः <span class="hl-karma">"प्रति", "परि", "अनु"</span> एते शब्दाः कर्मप्रवचनीयसंज्ञकाः भवन्ति ।</p>
+    </div>
+
+    <!-- Accordion Sections -->
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec2_title">२. लक्षणम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec2_desc">व्याख्यानेषु 'लक्षणम्' इति शब्दस्य अर्थः 'लक्ष्यते चिह्न्यते येन तत् लक्षणम्' इति दीयते । सरलभाषायाम्, कस्यचित् पदार्थस्य आधारेण दिशायाः सङ्केतः - इति अत्र स्वीकृतः अस्ति । यस्य पदार्थस्य आधारेण दिशायाः सङ्केतः दीयते, तस्य निर्देशार्थम् 'कर्मप्रवचनीययुक्ते द्वितीया' इत्यनेन द्वितीयाविभक्तिः प्रयुज्यते ।</p>
+            <div class="ex-grid-2">
+                <div class="ex-card-inner">
+                    <img src="images/552_l1.png" alt="ग्रामं प्रति">
+                    <p data-i18n="s2_ex1">१. देवदत्तः <span class="hl-lakshana">ग्रामं</span> <span class="hl-karma">प्रति</span> गच्छति।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_l2.png" alt="रावणं प्रति">
+                    <p data-i18n="s2_ex2">२. रामः <span class="hl-lakshana">रावणं</span> <span class="hl-karma">प्रति</span> शरान् क्षिपति।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_l3.png" alt="अग्निं प्रति">
+                    <p data-i18n="s2_ex3">३. शलभाः <span class="hl-lakshana">अग्निं</span> <span class="hl-karma">प्रति</span> पतन्ति।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_l4.png" alt="वृक्षं प्रति">
+                    <p data-i18n="s2_ex4">४. विद्युत् <span class="hl-lakshana">वृक्षं</span> <span class="hl-karma">प्रति</span> विद्योतते।</p>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec3_title">३. इत्थम्भूताख्यानम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec3_desc">कञ्चित् प्रकारम् आपन्नम् इत्थम्भूतम्, तस्य आख्यानम् इत्थम्भूताख्यानम्। सरलभाषायाम्, कस्यचित् विषयस्य सन्दर्भेण प्राप्तायाः स्थितेः (गुणस्य/भावस्य) ज्ञापनम्। यस्य विषयस्य सन्दर्भेण इयं स्थितिः भवति तस्य निर्देशार्थम् द्वितीयाविभक्तिः प्रयुज्यते ।</p>
+            <div class="ex-grid-2">
+                <div class="ex-card-inner">
+                    <img src="images/552_i1.png" alt="मातरं प्रति">
+                    <p data-i18n="s3_ex1">१. <span class="hl-lakshana">मातरं</span> <span class="hl-karma">प्रति</span> साधुः।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_i2.png" alt="हरिं प्रति">
+                    <p data-i18n="s3_ex2">२. <span class="hl-lakshana">हरिं</span> <span class="hl-karma">प्रति</span> भक्तः।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_i3.png" alt="दुर्योधनं प्रति">
+                    <p data-i18n="s3_ex3">३. <span class="hl-lakshana">दुर्योधनं</span> <span class="hl-karma">प्रति</span> क्रुद्धः।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_i4.png" alt="पुरुषं प्रति">
+                    <p data-i18n="s3_ex4">४. अस्मिन् देशे <span class="hl-lakshana">पुरुषं</span> <span class="hl-karma">प्रति</span> सौन्दर्यम्।</p>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec4_title">४. भागम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec4_desc">विभाजनक्रियाजनितः स्वस्वामिसम्बन्धः - इति दीयते । कस्यचन अंशस्य स्वामित्वज्ञापनम् अथवा कस्यचन पदार्थस्य अंशरूपेण विद्यमान: यः अपरः पदार्थः तस्य निर्देशः अपि भागः इत्यनेन भवति ।</p>
+            <div class="ex-grid-2">
+                <div class="ex-card-inner">
+                    <img src="images/552_b1.png" alt="विष्णुं प्रति">
+                    <p data-i18n="s4_ex1">१. लक्ष्मीः <span class="hl-lakshana">विष्णुं</span> <span class="hl-karma">प्रति</span>।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_b2.png" alt="हरं प्रति">
+                    <p data-i18n="s4_ex2">२. विषं <span class="hl-lakshana">हरं</span> <span class="hl-karma">प्रति</span>।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_b3.png" alt="पाण्डवान् प्रति">
+                    <p data-i18n="s4_ex3">३. पञ्च ग्रामाः <span class="hl-lakshana">पाण्डवान्</span> <span class="hl-karma">प्रति</span> देयाः।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_b4.png" alt="वृक्षं प्रति">
+                    <p data-i18n="s4_ex4">४. <span class="hl-lakshana">वृक्षं</span> <span class="hl-karma">प्रति</span> फलानि तिष्ठन्ति।</p>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec5_title">५. वीप्सा अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec5_desc">पदार्थान् व्याप्तुम् इच्छा वीप्सा। यदा एका एव क्रिया एकप्रकारस्य सर्वेषाम् अपि वस्तूनां कृते भवति, तदा तस्याः निर्देशः वीप्सा। अत्र 'नित्यवीप्सयोः' (८.१.४) इत्यनेन द्वित्वम् अपि भवति।</p>
+            <div class="ex-grid-2">
+                <div class="ex-card-inner">
+                    <img src="images/552_v1.png" alt="वृक्षं वृक्षं प्रति">
+                    <p data-i18n="s5_ex1">१. <span class="hl-lakshana">वृक्षं वृक्षं</span> <span class="hl-karma">प्रति</span> सिञ्चति।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_v2.png" alt="गृहं गृहं प्रति">
+                    <p data-i18n="s5_ex2">२. <span class="hl-lakshana">गृहं गृहं</span> <span class="hl-karma">प्रति</span> पश्यति।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_v3.png" alt="ग्रामं ग्रामं प्रति">
+                    <p data-i18n="s5_ex3">३. <span class="hl-lakshana">ग्रामं ग्रामं</span> <span class="hl-karma">प्रति</span> गच्छति।</p>
+                </div>
+                <div class="ex-card-inner">
+                    <img src="images/552_v4.png" alt="पुरुषं पुरुषं प्रति">
+                    <p data-i18n="s5_ex4">४. <span class="hl-lakshana">पुरुषं पुरुषं</span> <span class="hl-karma">प्रति</span> ददाति।</p>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec6_title">६. कर्मप्रवचनीयसंज्ञकाः अत्र सम्बन्धस्य द्योतकाः</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec6_desc">प्रकृतसूत्रेण उक्ताः प्रति, परि तथा च अनु एते कर्मप्रवचनीयसंज्ञकाः लक्षणादीन् अर्थान् नैव निर्दिशन्ति, अपितु एतैः अर्थैः ज्ञापितः सम्बन्धः निर्दिश्यते। यथा 'वृक्षं प्रति विद्योतते' अत्र लक्ष्य-लक्षणसम्बन्धः ज्ञाप्यते। 'मातरं प्रति साधुः' अत्र विषय-विषयिभावसम्बन्धः ज्ञाप्यते। अतएव सूत्रे 'विषयभूतेषु' इति शब्दः प्रयुक्तः।</p>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec7_title">७. प्रकृतसूत्रेण उक्तायाः कर्मप्रवचनीयसंज्ञायाः प्रयोजनम्</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec7_desc">अस्याः संज्ञायाः प्रयोजनद्वयम् अस्ति: १. <b>द्वितीयाविभक्तिविधानार्थम्</b> (कर्मप्रवचनीययुक्ते द्वितीया २.३.८ इत्यनेन)। २. <b>उपसर्गसंज्ञाप्रतिषेधार्थम्</b> - 'वृक्षं प्रति सिञ्चति' इत्यत्र प्रति इत्यस्य कर्मप्रवचनीयत्वात् तस्य उपसर्गत्वं न भवति, येन 'सिञ्चति' इत्यस्य सकारस्य अनिष्टं षत्वं (षिञ्चति) न भवति।</p>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec8_title">८. लक्षणस्य सन्दर्भेण 'प्रति' इत्यनेन सह अव्ययीभावसमासः</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec8_desc">लक्षणार्थे प्रयुक्तस्य 'प्रति' इति कर्मप्रवचनीयस्य <i>'लक्षणेनाभिप्रती आभिमुख्ये २.१.१४'</i> इत्यनेन विकल्पेन अव्ययीभावसमासः अपि सम्भवति । यथा - अग्निं प्रति शलभाः पतन्ति इत्यत्र अव्ययीभावसमासं कृत्वा <b>प्रत्यग्निं</b> शलभाः पतन्ति इति प्रयोगः अपि सम्भवति। अयम् अव्ययीभावसमासः केवलं 'प्रति' इत्यस्य योगे एव भवति; परि उत अनु इत्यस्य योगे न।</p>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec9_title">९. "परि" शब्दस्य योगे द्वितीया एव</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec9_desc">यद्यपि <i>'पञ्चम्यपाङ्परिभिः २.३.१०'</i> इत्यनेन 'परि' योगे पञ्चमी विधीयते, परन्तु इयं पञ्चमी केवलम् तदा एव भवति यदा 'परि' शब्दः 'वर्जनम्' (Exclusion) अस्मिन् अर्थे प्रयुज्यते। प्रकृतसूत्रे लक्षणादिषु अर्थेषु प्रयुक्तस्य 'परि' इत्यस्य योगे पञ्चमी न भवति, अपि तु औत्सर्गिकरूपेण <b>द्वितीया एव</b> विधीयते।</p>
+        </div>
+    </details>
+
+    <details class="custom-accordion">
+        <summary><span data-i18n="sec10_title">१०. लक्षणादिषु एव किमर्थम्?</span> <span class="icon">+</span></summary>
+        <div class="details-content">
+            <p class="detailed-desc" data-i18n="sec10_desc">यत्र प्रति, परि, अनु एते शब्दाः लक्षणादीन् अर्थान् विहाय अन्येषु अर्थेषु प्रयुज्यन्ते, तत्र प्रकृतसूत्रेण तेषां कर्मप्रवचनीयसंज्ञा न भवति । यथा - <b>ओदनं परिषिञ्चति</b> इत्यत्र परि इत्यस्य 'सर्वतः' इत्यस्मिन् अर्थे प्रयोगः कृतः अस्ति । अत्र परि इत्यस्य उपसर्गसंज्ञा भवति, यस्य सामर्थ्यात् (८.३.६५) 'सिञ्चति' इत्यस्य सकारस्य षत्वं भवति।</p>
+        </div>
+    </details>
+
+    <!-- Quiz Section -->
+    <div class="game-box" id="exam-section">
+        <h2 class="special-word" style="color:#1565c0; margin-top:0;" data-i18n="gameTitle">🎮 ज्ञान-परीक्षा (Quiz)</h2>
+        <p style="color:#666;" data-i18n="gameSubtitle">प्रश्नानाम् उत्तरं दत्त्वा ज्ञानं दृढीकुर्वन्तु!</p>
+        
+        <div class="question active" id="q1">
+            <p data-i18n="q1text"><b>प्रश्नः १:</b> 'लक्षणेत्थम्भूताख्यान...' सूत्रानुसारं केषां कर्मप्रवचनीयसंज्ञा भवति?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 1, false)" data-i18n="q1o1">अप, आङ्</button>
+                <button onclick="checkAnswer(this, 1, true)" data-i18n="q1o2">प्रति, परि, अनु</button>
+                <button onclick="checkAnswer(this, 1, false)" data-i18n="q1o3">सु, अति</button>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <p data-i18n="q2text"><b>प्रश्नः २:</b> 'वृक्षं वृक्षं प्रति सिञ्चति' अत्र कस्य अर्थस्य द्योतनम् अस्ति?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 2, false)" data-i18n="q2o1">लक्षणस्य</button>
+                <button onclick="checkAnswer(this, 2, false)" data-i18n="q2o2">भागस्य</button>
+                <button onclick="checkAnswer(this, 2, true)" data-i18n="q2o3">वीप्सायाः</button>
+            </div>
+        </div>
+
+        <div class="question" id="q3">
+            <p data-i18n="q3text"><b>प्रश्नः ३:</b> 'अग्निं प्रति शलभाः पतन्ति' अत्र विकल्पेन कः समासः भवितुम् अर्हति?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 3, false)" data-i18n="q3o1">तत्पुरुषः</button>
+                <button onclick="checkAnswer(this, 3, true)" data-i18n="q3o2">अव्ययीभावः (प्रत्यग्निम्)</button>
+                <button onclick="checkAnswer(this, 3, false)" data-i18n="q3o3">बहुव्रीहिः</button>
+            </div>
+        </div>
+
+        <div id="success-msg" style="display:none;">
+            <h3 style="color:var(--color-phala);" data-i18n="successMsg">🌟 उत्तमम्! भवान्/भवती एतत् सूत्रं सम्यक् ज्ञातवान्/ज्ञातवती।</h3>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="nav-buttons">
+        <a href="551.html" class="nav-btn" data-i18n="nav_prev">⬅ पूर्वसूत्रम् (५५१)</a>
+        <a href="index.html" class="nav-btn" data-i18n="nav_index">🏠 मुखपृष्ठम्</a>
+        <a href="553.html" class="nav-btn" data-i18n="nav_next">अग्रिमसूत्रम् (५५३) ➡</a>
+    </div>
+
+</div>
+
+<!-- LOCAL TRANSLATION DATA FOR THIS SUTRA ONLY -->
+<script>
+    const translations = {
+        "sa": {
+            "nav_prev": "⬅ पूर्वसूत्रम् (५५१)", "nav_index": "🏠 मुखपृष्ठम्", "nav_next": "अग्रिमसूत्रम् (५५३) ➡",
+            "meta_padaccheda": "पदच्छेदः", "meta_anuvritti": "अनुवृत्तिः", "meta_adhikara": "अधिकारः", "meta_sutraprakara": "सूत्रप्रकारः",
+            "sutraNum": "सिद्धान्तकौमुदी - ५५२",
+            "vritti": "एष्वर्थेषु विषयभूतेषु प्रत्यादय उक्तसंज्ञाः स्युः । लक्षणे, वृक्षं प्रति, पर्यनु वा विद्योतते विद्युत् । इत्थंभूताख्याने, भक्तो विष्णुं प्रति, पर्यनु वा । भागे, लक्ष्मीर्हरिं प्रति, पर्यनु वा । हरेर्भाग इत्यर्थः । वीप्सायां, वृक्षंवृक्षं प्रति पर्यनु वा सिञ्चति । अत्रोपसर्गत्वाभावान्न षत्वम् । एषु किम् ? परिषिञ्चति ॥",
+            "legend1": "लक्षण-इत्थम्भूत-भाग-वीप्साः", "legend2": "प्रति / परि / अनु", "legend3": "द्वितीया विभक्तिः",
+            "sec1_title": "१. सूत्रार्थः", "sec1_desc": "लक्षणम्, इत्थम्भूताख्यानम्, भागः तथा च वीप्सा - एतेषु सन्दर्भेषु प्रयुक्ताः <span class='hl-karma'>\"प्रति\", \"परि\", \"अनु\"</span> एते शब्दाः कर्मप्रवचनीयसंज्ञकाः भवन्ति ।",
+            "sec2_title": "२. लक्षणम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा",
+            "sec2_desc": "व्याख्यानेषु 'लक्षणम्' इति शब्दस्य अर्थः 'लक्ष्यते चिह्न्यते येन तत् लक्षणम्' इति दीयते । कस्यचित् पदार्थस्य आधारेण दिशायाः सङ्केतः अत्र स्वीकृतः अस्ति ।",
+            "s2_ex1": "१. देवदत्तः <span class='hl-lakshana'>ग्रामं</span> <span class='hl-karma'>प्रति</span> गच्छति।",
+            "s2_ex2": "२. रामः <span class='hl-lakshana'>रावणं</span> <span class='hl-karma'>प्रति</span> शरान् क्षिपति।",
+            "s2_ex3": "३. शलभाः <span class='hl-lakshana'>अग्निं</span> <span class='hl-karma'>प्रति</span> पतन्ति।",
+            "s2_ex4": "४. विद्युत् <span class='hl-lakshana'>वृक्षं</span> <span class='hl-karma'>प्रति</span> विद्योतते।",
+            "sec3_title": "३. इत्थम्भूताख्यानम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा",
+            "sec3_desc": "कञ्चित् प्रकारम् आपन्नम् इत्थम्भूतम्। कस्यचित् विषयस्य सन्दर्भेण प्राप्तायाः स्थितेः (गुणस्य/भावस्य) ज्ञापनम्।",
+            "s3_ex1": "१. <span class='hl-lakshana'>मातरं</span> <span class='hl-karma'>प्रति</span> साधुः।",
+            "s3_ex2": "२. <span class='hl-lakshana'>हरिं</span> <span class='hl-karma'>प्रति</span> भक्तः।",
+            "s3_ex3": "३. <span class='hl-lakshana'>दुर्योधनं</span> <span class='hl-karma'>प्रति</span> क्रुद्धः।",
+            "s3_ex4": "४. अस्मिन् देशे <span class='hl-lakshana'>पुरुषं</span> <span class='hl-karma'>प्रति</span> सौन्दर्यम्।",
+            "sec4_title": "४. भागम् अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा",
+            "sec4_desc": "विभाजनक्रियाजनितः स्वस्वामिसम्बन्धः अथवा कस्यचन पदार्थस्य अंशरूपेण विद्यमान: यः अपरः पदार्थः तस्य निर्देशः।",
+            "s4_ex1": "१. लक्ष्मीः <span class='hl-lakshana'>विष्णुं</span> <span class='hl-karma'>प्रति</span>।",
+            "s4_ex2": "२. विषं <span class='hl-lakshana'>हरं</span> <span class='hl-karma'>प्रति</span>।",
+            "s4_ex3": "३. पञ्च ग्रामाः <span class='hl-lakshana'>पाण्डवान्</span> <span class='hl-karma'>प्रति</span> देयाः।",
+            "s4_ex4": "४. <span class='hl-lakshana'>वृक्षं</span> <span class='hl-karma'>प्रति</span> फलानि तिष्ठन्ति।",
+            "sec5_title": "५. वीप्सा अस्मिन् अर्थे कर्मप्रवचनीयसंज्ञा",
+            "sec5_desc": "पदार्थान् व्याप्तुम् इच्छा वीप्सा। यदा एका एव क्रिया एकप्रकारस्य सर्वेषाम् अपि वस्तूनां कृते भवति तदा वीप्सा।",
+            "s5_ex1": "१. <span class='hl-lakshana'>वृक्षं वृक्षं</span> <span class='hl-karma'>प्रति</span> सिञ्चति।",
+            "s5_ex2": "२. <span class='hl-lakshana'>गृहं गृहं</span> <span class='hl-karma'>प्रति</span> पश्यति।",
+            "s5_ex3": "३. <span class='hl-lakshana'>ग्रामं ग्रामं</span> <span class='hl-karma'>प्रति</span> गच्छति।",
+            "s5_ex4": "४. <span class='hl-lakshana'>पुरुषं पुरुषं</span> <span class='hl-karma'>प्रति</span> ददाति।",
+            "sec6_title": "६. कर्मप्रवचनीयसंज्ञकाः अत्र सम्बन्धस्य द्योतकाः",
+            "sec6_desc": "एते शब्दाः लक्षणादीन् अर्थान् नैव निर्दिशन्ति, अपितु एतैः अर्थैः ज्ञापितः सम्बन्धः निर्दिश्यते। अतएव सूत्रे 'विषयभूतेषु' इति शब्दः प्रयुक्तः।",
+            "sec7_title": "७. प्रकृतसूत्रेण उक्तायाः कर्मप्रवचनीयसंज्ञायाः प्रयोजनम्",
+            "sec7_desc": "प्रयोजनद्वयम् अस्ति: १. <b>द्वितीयाविभक्तिविधानार्थम्</b>। २. <b>उपसर्गसंज्ञाप्रतिषेधार्थम्</b> (सिञ्चति इत्यस्य षत्वं न भवति)।",
+            "sec8_title": "८. लक्षणस्य सन्दर्भेण 'प्रति' इत्यनेन सह अव्ययीभावसमासः",
+            "sec8_desc": "'लक्षणेनाभिप्रती आभिमुख्ये २.१.१४' इत्यनेन विकल्पेन अव्ययीभावसमासः अपि सम्भवति । (अग्निं प्रति = <b>प्रत्यग्निं</b>)।",
+            "sec9_title": "९. \"परि\" शब्दस्य योगे द्वितीया एव",
+            "sec9_desc": "'पञ्चम्यपाङ्परिभिः' इत्यनेन 'परि' योगे पञ्चमी तदा एव भवति यदा 'वर्जनम्' अर्थः। लक्षणादिषु अर्थेषु <b>द्वितीया एव</b> भवति।",
+            "sec10_title": "१०. लक्षणादिषु एव किमर्थम्?",
+            "sec10_desc": "यत्र एते शब्दाः अन्येषु अर्थेषु प्रयुज्यन्ते, तत्र कर्मप्रवचनीयसंज्ञा न भवति । (यथा - <b>ओदनं परिषिञ्चति</b> अत्र परि = सर्वतः)।",
+            "gameTitle": "🎮 ज्ञान-परीक्षा (Quiz)",
+            "gameSubtitle": "प्रश्नानाम् उत्तरं दत्त्वा ज्ञानं दृढीकुर्वन्तु!",
+            "q1text": "<b>प्रश्नः १:</b> 'लक्षणेत्थम्भूताख्यान...' सूत्रानुसारं केषां कर्मप्रवचनीयसंज्ञा भवति?", "q1o1": "अप, आङ्", "q1o2": "प्रति, परि, अनु", "q1o3": "सु, अति",
+            "q2text": "<b>प्रश्नः २:</b> 'वृक्षं वृक्षं प्रति सिञ्चति' अत्र कस्य अर्थस्य द्योतनम् अस्ति?", "q2o1": "लक्षणस्य", "q2o2": "भागस्य", "q2o3": "वीप्सायाः",
+            "q3text": "<b>प्रश्नः ३:</b> 'अग्निं प्रति शलभाः पतन्ति' अत्र विकल्पेन कः समासः भवितुम् अर्हति?", "q3o1": "तत्पुरुषः", "q3o2": "अव्ययीभावः (प्रत्यग्निम्)", "q3o3": "बहुव्रीहिः",
+            "successMsg": "🌟 उत्तमम्! भवान्/भवती एतत् सूत्रं सम्यक् ज्ञातवान्/ज्ञातवती।"
+        },
+        "kn": {
+            "nav_prev": "⬅ ಹಿಂದಿನ ಸೂತ್ರ (೫೫೧)", "nav_index": "🏠 ಮುಖಪುಟ", "nav_next": "ಮುಂದಿನ ಸೂತ್ರ (೫೫೩) ➡",
+            "meta_padaccheda": "ಪದಚ್ಛೇದಃ", "meta_anuvritti": "ಅನುವೃತ್ತಿಃ", "meta_adhikara": "ಅಧಿಕಾರಃ", "meta_sutraprakara": "ಸೂತ್ರಪ್ರಕಾರಃ",
+            "sutraNum": "ಸಿದ್ಧಾಂತ ಕೌಮುದೀ - ೫೫೨",
+            "vritti": "ಈ ಅರ್ಥಗಳು ವಿಷಯವಾಗಿದ್ದಾಗ ಪ್ರತಿ, ಪರಿ, ಅನು ಶಬ್ದಗಳಿಗೆ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಬರುತ್ತದೆ.",
+            "legend1": "ಲಕ್ಷಣ-ಇತ್ಥಂಭೂತ-ಭಾಗ-ವೀಪ್ಸಾ", "legend2": "ಪ್ರತಿ / ಪರಿ / ಅನು", "legend3": "ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ",
+            "sec1_title": "೧. ಸೂತ್ರಾರ್ಥ", "sec1_desc": "ಲಕ್ಷಣ (ಗುರುತು/ದಿಕ್ಕು), ಇತ್ಥಂಭೂತಾಖ್ಯಾನ (ಹೀಗಿದ್ದಾನೆಂದು ಹೇಳುವಿಕೆ), ಭಾಗ (ಪಾಲು) ಮತ್ತು ವೀಪ್ಸಾ (ವ್ಯಾಪ್ತಿ) - ಈ ಅರ್ಥಗಳಲ್ಲಿ <span class='hl-karma'>\"प्रति\", \"परि\", \"अनु\"</span> ಶಬ್ದಗಳಿಗೆ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಬರುತ್ತದೆ.",
+            "sec2_title": "೨. 'ಲಕ್ಷಣ' ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ",
+            "sec2_desc": "ಒಂದು ವಸ್ತುವನ್ನು ಆಧಾರವಾಗಿಟ್ಟುಕೊಂಡು (ಗುರುತಾಗಿಟ್ಟುಕೊಂಡು) ಅಥವಾ ಗುರಿಯಾಗಿಸಿಕೊಂಡು ನಡೆಯುವ ಕ್ರಿಯೆಯ ದಿಕ್ಕನ್ನು ಸೂಚಿಸುವುದಕ್ಕೆ 'ಲಕ್ಷಣ' ಎನ್ನುತ್ತಾರೆ. ಯಾವ ವಸ್ತುವಿನ ಆಧಾರದಿಂದ ದಿಕ್ಕನ್ನು ಸೂಚಿಸಲಾಗುತ್ತದೆಯೋ ಆ ವಸ್ತುವಿಗೆ ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ ಬರುತ್ತದೆ.",
+            "s2_ex1": "೧. ದೇವದತ್ತನು <span class='hl-lakshana'>ಹಳ್ಳಿಯ</span> ದಿಕ್ಕಿನತ್ತ (<span class='hl-karma'>प्रति</span>) ಹೋಗುತ್ತಿದ್ದಾನೆ.",
+            "s2_ex2": "೨. ರಾಮನು <span class='hl-lakshana'>ರಾವಣನನ್ನು</span> ಗುರಿಯಾಗಿಸಿಕೊಂಡು (<span class='hl-karma'>प्रति</span>) ಬಾಣಗಳನ್ನು ಬಿಡುತ್ತಿದ್ದಾನೆ.",
+            "s2_ex3": "೩. ಮಿಡತೆಗಳು <span class='hl-lakshana'>ಬೆಂಕಿಯತ್ತ</span> (<span class='hl-karma'>प्रति</span>) ಹಾರುತ್ತಿವೆ.",
+            "s2_ex4": "೪. ಮಿಂಚು <span class='hl-lakshana'>ಮರದ</span> ಕಡೆಗೆ (<span class='hl-karma'>प्रति</span>) ಮಿಂಚುತ್ತಿದೆ.",
+            "sec3_title": "೩. 'ಇತ್ಥಂಭೂತಾಖ್ಯಾನ' ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ",
+            "sec3_desc": "ಒಬ್ಬರ ಬಗ್ಗೆ ಅಥವಾ ಒಂದು ವಿಷಯದ ಬಗ್ಗೆ ಇರುವ ನಿರ್ದಿಷ್ಟ ಸ್ಥಿತಿಯನ್ನು (ಗುಣ/ಭಾವನೆಯನ್ನು) ಹೇಳುವುದು. ಯಾರ ವಿಷಯದಲ್ಲಿ ಆ ಸ್ಥಿತಿ ಇರುತ್ತದೆಯೋ ಅದಕ್ಕೆ ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ ಬರುತ್ತದೆ.",
+            "s3_ex1": "೧. ಇವನು <span class='hl-lakshana'>ತಾಯಿಯ</span> ವಿಷಯದಲ್ಲಿ (<span class='hl-karma'>प्रति</span>) ಒಳ್ಳೆಯವನು (ಸಾಧುಃ).",
+            "s3_ex2": "೨. ಇವನು <span class='hl-lakshana'>ಹರಿಯ</span> ವಿಷಯದಲ್ಲಿ (<span class='hl-karma'>प्रति</span>) ಭಕ್ತನಾಗಿದ್ದಾನೆ.",
+            "s3_ex3": "೩. ಭೀಮನು <span class='hl-lakshana'>ದುರ್ಯೋಧನನ</span> ಮೇಲೆ (<span class='hl-karma'>प्रति</span>) ಕೋಪಗೊಂಡಿದ್ದಾನೆ.",
+            "s3_ex4": "೪. ಈ ದೇಶದಲ್ಲಿ <span class='hl-lakshana'>ಪುರುಷರ</span> ವಿಷಯದಲ್ಲಿ (<span class='hl-karma'>प्रति</span>) ಸೌಂದರ್ಯವಿದೆ.",
+            "sec4_title": "೪. 'ಭಾಗ' ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ",
+            "sec4_desc": "ವಿಭಜನೆಯಿಂದ ಉಂಟಾದ 'ಸ್ವ-ಸ್ವಾಮಿ' (ಒಡೆಯ-ಸೊತ್ತು) ಸಂಬಂಧ, ಅಥವಾ ಅಂಶ-ಅವಯವ ಸಂಬಂಧವನ್ನು ಇದು ಸೂಚಿಸುತ್ತದೆ.",
+            "s4_ex1": "೧. ಲಕ್ಷ್ಮಿಯು <span class='hl-lakshana'>ವಿಷ್ಣುವಿನ</span> ಪಾಲಿಗೆ (<span class='hl-karma'>प्रति</span>) ಸೇರಿದವಳು.",
+            "s4_ex2": "೨. ವಿಷವು <span class='hl-lakshana'>ಶಿವನ</span> ಪಾಲಿಗೆ (<span class='hl-karma'>प्रति</span>) ಬಂದಿತು.",
+            "s4_ex3": "೩. ಐದು ಹಳ್ಳಿಗಳನ್ನು <span class='hl-lakshana'>ಪಾಂಡವರಿಗೆ</span> ಭಾಗವಾಗಿ (<span class='hl-karma'>प्रति</span>) ನೀಡಬೇಕು.",
+            "s4_ex4": "೪. ಹಣ್ಣುಗಳು <span class='hl-lakshana'>ಮರದ</span> ಭಾಗವಾಗಿ (<span class='hl-karma'>प्रति</span>) ಇವೆ.",
+            "sec5_title": "೫. 'ವೀಪ್ಸಾ' ಅರ್ಥದಲ್ಲಿ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ",
+            "sec5_desc": "ಒಂದೇ ಕ್ರಿಯೆಯು ಎಲ್ಲ ವಸ್ತುಗಳಿಗೂ ಅನ್ವಯವಾಗುತ್ತಿದ್ದರೆ (ವ್ಯಾಪ್ತಿ/ಪುನರಾವೃತ್ತಿ) ಅದು ವೀಪ್ಸಾ. ಇಲ್ಲಿ 'नित्यवीप्सयोः' ಸೂತ್ರದಿಂದ ಪದವು ಎರಡು ಬಾರಿ ಬರುತ್ತದೆ.",
+            "s5_ex1": "೧. <span class='hl-lakshana'>ಪ್ರತಿ ಮರಕ್ಕೂ</span> (<span class='hl-karma'>प्रति</span>) ನೀರು ಹಾಕುತ್ತಿದ್ದಾನೆ.",
+            "s5_ex2": "೨. <span class='hl-lakshana'>ಪ್ರತಿ ಮನೆಗೂ</span> (<span class='hl-karma'>प्रति</span>) ಭೇಟಿ ನೀಡುತ್ತಿದ್ದಾನೆ.",
+            "s5_ex3": "೩. <span class='hl-lakshana'>ಪ್ರತಿ ಹಳ್ಳಿಗೂ</span> (<span class='hl-karma'>प्रति</span>) ಹೋಗುತ್ತಿದ್ದಾನೆ.",
+            "s5_ex4": "೪. <span class='hl-lakshana'>ಪ್ರತಿ ವ್ಯಕ್ತಿಗೂ</span> (<span class='hl-karma'>प्रति</span>) ದಾನ ನೀಡುತ್ತಿದ್ದಾನೆ.",
+            "sec6_title": "೬. ಕರ್ಮಪ್ರವಚನೀಯಗಳು ಇಲ್ಲಿ ಸಂಬಂಧದ ದ್ಯೋತಕಗಳು",
+            "sec6_desc": "ಇಲ್ಲಿ ಬರುವ ಪ್ರತಿ, ಪರಿ, ಅನು ಶಬ್ದಗಳು ನೇರವಾಗಿ ಲಕ್ಷಣ-ಇತ್ಥಂಭೂತ ಇತ್ಯಾದಿ ಅರ್ಥಗಳನ್ನು ಹೇಳುವುದಿಲ್ಲ, ಬದಲಾಗಿ ಆ ಅರ್ಥಗಳ ಮೂಲಕ ಏರ್ಪಡುವ <b>ಸಂಬಂಧವನ್ನು ಮಾತ್ರ</b> ಸೂಚಿಸುತ್ತವೆ.",
+            "sec7_title": "೭. ಪ್ರಸ್ತುತ ಸೂತ್ರದ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆಯ ಪ್ರಯೋಜನವೇನು?",
+            "sec7_desc": "ಎರಡು ಪ್ರಯೋಜನಗಳು: ೧. <b>ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ ಬರುವುದು</b>. ೨. <b>ಉಪಸರ್ಗ ಸಂಜ್ಞೆ ಇಲ್ಲದಿರುವುದು</b> (ಇದರಿಂದ 'ಸಿಂಚತಿ' ಎಂಬಲ್ಲಿ 'ಷತ್ವ' ಬರುವುದಿಲ್ಲ).",
+            "sec8_title": "೮. 'ಲಕ್ಷಣ' ಅರ್ಥದಲ್ಲಿ 'ಪ್ರತಿ' ಶಬ್ದದೊಂದಿಗೆ ಅವ್ಯಯೀಭಾವ ಸಮಾಸ",
+            "sec8_desc": "ಲಕ್ಷಣಾರ್ಥದಲ್ಲಿ 'ಪ್ರತಿ' ಬಂದಾಗ <i>'लक्षणेनाभिप्रती...'</i> ಸೂತ್ರದಿಂದ ವಿಕಲ್ಪವಾಗಿ ಅವ್ಯಯೀಭಾವ ಸಮಾಸ ಬರುತ್ತದೆ. (ಉದಾ: ಅಗ್ನಿಂ ಪ್ರತಿ = <b>ಪ್ರತ್ಯಗ್ನಿಂ</b>).",
+            "sec9_title": "೯. \"ಪರಿ\" ಶಬ್ದದ ಯೋಗದಲ್ಲಿ ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿಯೇ ಬರುತ್ತದೆ",
+            "sec9_desc": "<i>'पञ्चम्यपाङ्परिभिः'</i> ಸೂತ್ರದಿಂದ 'ಪರಿ' ಜೊತೆ ಪಂಚಮೀ ವಿಭಕ್ತಿ ಬರುವುದು ಕೇವಲ 'ವರ್ಜನ' (ಹೊರತುಪಡಿಸಿ) ಎಂಬ ಅರ್ಥದಲ್ಲಿದ್ದಾಗ ಮಾತ್ರ. ಪ್ರಸ್ತುತ ಲಕ್ಷಣಾದಿ ಅರ್ಥಗಳಲ್ಲಿ <b>ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿಯೇ</b> ಬರುತ್ತದೆ.",
+            "sec10_title": "೧೦. ಲಕ್ಷಣಾದಿ ಅರ್ಥಗಳಲ್ಲಿ ಮಾತ್ರವೇಕೆ ಹೇಳಿದ್ದು?",
+            "sec10_desc": "ಒಂದು ವೇಳೆ ಈ ಶಬ್ದಗಳು ಬೇರೆ ಅರ್ಥದಲ್ಲಿ ಬಂದರೆ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಬರುವುದಿಲ್ಲ. ಉದಾ: <b>ओदनं परिषिञ्चति</b> (ಇಲ್ಲಿ ಪರಿ = ಎಲ್ಲ ಕಡೆಗೂ). ಇಲ್ಲಿ 'ಪರಿ'ಗೆ ಉಪಸರ್ಗ ಸಂಜ್ಞೆ ಬರುವುದರಿಂದ 'ಷತ್ವ' ಬಂದು 'ಷಿಂಚತಿ' ಎಂದಾಗುತ್ತದೆ.",
+            "gameTitle": "🎮 ಜ್ಞಾನ ಪರೀಕ್ಷೆ (Quiz)", "gameSubtitle": "ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ ಜ್ಞಾನವನ್ನು ದೃಢಪಡಿಸಿಕೊಳ್ಳಿ!",
+            "q1text": "<b>ಪ್ರಶ್ನೆ ೧:</b> 'लक्षणेत्थम्भूताख्यान...' ಸೂತ್ರದ ಪ್ರಕಾರ ಕರ್ಮಪ್ರವಚನೀಯ ಸಂಜ್ಞೆ ಯಾವುದಕ್ಕೆ ಬರುತ್ತದೆ?", "q1o1": "अप, आङ्", "q1o2": "प्रति, परि, अनु", "q1o3": "सु, अति",
+            "q2text": "<b>ಪ್ರಶ್ನೆ ೨:</b> 'वृक्षं वृक्षं प्रति सिञ्चति' - ಇಲ್ಲಿ ಯಾವ ಅರ್ಥ ಸೂಚಿತವಾಗಿದೆ?", "q2o1": "ಲಕ್ಷಣ", "q2o2": "ಭಾಗ", "q2o3": "ವೀಪ್ಸಾ",
+            "q3text": "<b>ಪ್ರಶ್ನೆ ೩:</b> 'अग्निं प्रति शलभाः पतन्ति' - ಇಲ್ಲಿ ಯಾವ ಸಮಾಸ ವಿಕಲ್ಪವಾಗಿ ಬರಬಹುದು?", "q3o1": "ತತ್ಪುರುಷ", "q3o2": "ಅವ್ಯಯೀಭಾವ (ಪ್ರತ್ಯಗ್ನಿಮ್)", "q3o3": "ಬಹುವ್ರೀಹಿ",
+            "successMsg": "🌟 ಅದ್ಭುತ! ನೀವು ಈ ಸೂತ್ರವನ್ನು ಸರಿಯಾಗಿ ಅರ್ಥಮಾಡಿಕೊಂಡಿದ್ದೀರಿ."
+        },
+        "hi": {
+            "nav_prev": "⬅ पूर्व सूत्र (५५१)", "nav_index": "🏠 मुखपृष्ठ", "nav_next": "अगला सूत्र (५५३) ➡",
+            "meta_padaccheda": "पदच्छेदः", "meta_anuvritti": "अनुवृत्तिः", "meta_adhikara": "अधिकारः", "meta_sutraprakara": "सूत्रप्रकारः",
+            "sutraNum": "सिद्धान्तकौमुदी - ५५२",
+            "vritti": "इन अर्थों के विषय होने पर प्रति, परि, अनु कर्मप्रवचनीय संज्ञक होते हैं।",
+            "legend1": "लक्षण-इत्थम्भूत-भाग-वीप्सा", "legend2": "प्रति / परि / अनु", "legend3": "द्वितीया विभक्ति",
+            "sec1_title": "१. सूत्रार्थ", "sec1_desc": "लक्षण, इत्थम्भूताख्यान, भाग और वीप्सा - इन सन्दर्भों में प्रयुक्त <span class='hl-karma'>\"प्रति\", \"परि\", \"अनु\"</span> शब्द कर्मप्रवचनीय संज्ञक होते हैं।",
+            "sec2_title": "२. 'लक्षण' अर्थ में कर्मप्रवचनीय संज्ञा",
+            "sec2_desc": "किसी पदार्थ को आधार (चिह्न) मानकर दिशा का संकेत करना 'लक्षण' कहलाता है।",
+            "s2_ex1": "१. देवदत्त <span class='hl-lakshana'>गाँव</span> की दिशा में (<span class='hl-karma'>प्रति</span>) जा रहा है।",
+            "s2_ex2": "२. राम <span class='hl-lakshana'>रावण</span> को लक्ष्य करके (<span class='hl-karma'>प्रति</span>) बाण चला रहे हैं।",
+            "s2_ex3": "३. पतंगे <span class='hl-lakshana'>अग्नि</span> की ओर (<span class='hl-karma'>प्रति</span>) गिरते हैं।",
+            "s2_ex4": "४. बिजली <span class='hl-lakshana'>वृक्ष</span> की दिशा में (<span class='hl-karma'>प्रति</span>) चमक रही है।",
+            "sec3_title": "३. 'इत्थम्भूताख्यान' अर्थ में कर्मप्रवचनीय संज्ञा",
+            "sec3_desc": "किसी विषय के सन्दर्भ में प्राप्त स्थिति (गुण/भाव) को बताना।",
+            "s3_ex1": "१. <span class='hl-lakshana'>माता</span> के विषय में (<span class='hl-karma'>प्रति</span>) साधु (अच्छा) है।",
+            "s3_ex2": "२. <span class='hl-lakshana'>हरि</span> के विषय में (<span class='hl-karma'>प्रति</span>) भक्त है।",
+            "s3_ex3": "३. <span class='hl-lakshana'>दुर्योधन</span> के प्रति (<span class='hl-karma'>प्रति</span>) क्रोधित है।",
+            "s3_ex4": "४. इस देश में <span class='hl-lakshana'>पुरुषों</span> के प्रति (<span class='hl-karma'>प्रति</span>) सौन्दर्य है।",
+            "sec4_title": "४. 'भाग' अर्थ में कर्मप्रवचनीय संज्ञा",
+            "sec4_desc": "विभाजन से उत्पन्न स्व-स्वामि सम्बन्ध (या अंश के रूप में स्थिति)।",
+            "s4_ex1": "१. लक्ष्मी <span class='hl-lakshana'>विष्णु</span> के हिस्से में (<span class='hl-karma'>प्रति</span>) आईं।",
+            "s4_ex2": "२. विष <span class='hl-lakshana'>शिव</span> के हिस्से में (<span class='hl-karma'>प्रति</span>) आया।",
+            "s4_ex3": "३. पाँच गाँव <span class='hl-lakshana'>पाण्डवों</span> को भाग के रूप में (<span class='hl-karma'>प्रति</span>) देने चाहिए।",
+            "s4_ex4": "४. फल <span class='hl-lakshana'>वृक्ष</span> के हिस्से/अवयव के रूप में (<span class='hl-karma'>प्रति</span>) हैं।",
+            "sec5_title": "५. 'वीप्सा' अर्थ में कर्मप्रवचनीय संज्ञा",
+            "sec5_desc": "जब एक ही क्रिया सभी वस्तुओं के लिए व्याप्त हो, तो उसे वीप्सा कहते हैं। यहाँ द्वित्व भी होता है।",
+            "s5_ex1": "१. <span class='hl-lakshana'>प्रत्येक वृक्ष</span> को (<span class='hl-karma'>प्रति</span>) सींचता है।",
+            "s5_ex2": "२. <span class='hl-lakshana'>प्रत्येक घर</span> को (<span class='hl-karma'>प्रति</span>) देखता है।",
+            "s5_ex3": "३. <span class='hl-lakshana'>प्रत्येक गाँव</span> को (<span class='hl-karma'>प्रति</span>) जाता है।",
+            "s5_ex4": "४. <span class='hl-lakshana'>प्रत्येक व्यक्ति</span> को (<span class='hl-karma'>प्रति</span>) देता है।",
+            "sec6_title": "६. कर्मप्रवचनीय यहाँ सम्बन्ध के द्योतक हैं",
+            "sec6_desc": "ये शब्द साक्षात् लक्षण आदि अर्थों को नहीं बताते, बल्कि उन अर्थों से सूचित <b>सम्बन्ध मात्र</b> को दर्शाते हैं।",
+            "sec7_title": "७. इस कर्मप्रवचनीय संज्ञा का प्रयोजन",
+            "sec7_desc": "दो प्रयोजन: १. <b>द्वितीया विभक्ति करना</b>। २. <b>उपसर्ग संज्ञा को रोकना</b> (जिससे 'सिञ्चति' में 'ष' नहीं होता)।",
+            "sec8_title": "८. 'लक्षण' के सन्दर्भ में 'प्रति' के साथ अव्ययीभाव समास",
+            "sec8_desc": "लक्षण अर्थ में 'प्रति' का विकल्प से अव्ययीभाव समास होता है। (उदा: अग्निं प्रति = <b>प्रत्यग्निं</b>)।",
+            "sec9_title": "९. \"परि\" शब्द के योग में द्वितीया ही होगी",
+            "sec9_desc": "'पञ्चम्यपाङ्परिभिः' से 'परि' के योग में पञ्चमी केवल 'वर्जन' अर्थ में होती है। यहाँ <b>द्वितीया ही</b> होगी।",
+            "sec10_title": "१०. लक्षणादि में ही क्यों?",
+            "sec10_desc": "यदि ये शब्द किसी अन्य अर्थ में आएँ तो कर्मप्रवचनीय संज्ञा नहीं होगी। उदा: <b>ओदनं परिषिञ्चति</b> (परि = चारों ओर)। यहाँ 'ष' हो जाता है।",
+            "gameTitle": "🎮 ज्ञान परीक्षा (Quiz)", "gameSubtitle": "प्रश्नों के उत्तर देकर अपना ज्ञान दृढ़ करें!",
+            "q1text": "<b>प्रश्न १:</b> 'लक्षणेत्थम्भूताख्यान...' सूत्र के अनुसार किनकी कर्मप्रवचनीय संज्ञा होती है?", "q1o1": "अप, आङ्", "q1o2": "प्रति, परि, अनु", "q1o3": "सु, अति",
+            "q2text": "<b>प्रश्न २:</b> 'वृक्षं वृक्षं प्रति सिञ्चति' में कौन सा अर्थ है?", "q2o1": "लक्षण", "q2o2": "भाग", "q2o3": "वीप्सा",
+            "q3text": "<b>प्रश्न ३:</b> 'अग्निं प्रति शलभाः पतन्ति' में विकल्प से कौन सा समास हो सकता है?", "q3o1": "तत्पुरुष", "q3o2": "अव्ययीभाव (प्रत्यग्निम्)", "q3o3": "बहुव्रीहि",
+            "successMsg": "🌟 बहुत उत्तम! आपने इस सूत्र को अच्छी तरह समझ लिया है।"
+        },
+        "en": {
+            "nav_prev": "⬅ Previous Sutra (551)", "nav_index": "🏠 Index", "nav_next": "Next Sutra (553) ➡",
+            "meta_padaccheda": "Padaccheda", "meta_anuvritti": "Anuvritti", "meta_adhikara": "Adhikara", "meta_sutraprakara": "Sutra Type",
+            "sutraNum": "Siddhanta Kaumudi - 552",
+            "vritti": "When denoting Lakshana, Itthambhutakhyana, Bhaga, and Vipsa, the words Prati, Pari, and Anu get the Karmapravachaniya designation.",
+            "legend1": "Lakshana-Ittham-Bhaga-Vipsa", "legend2": "Prati / Pari / Anu", "legend3": "2nd Case (Dvitiya)",
+            "sec1_title": "1. Meaning of the Sutra",
+            "sec1_desc": "The words <span class='hl-karma'>\"prati\", \"pari\", and \"anu\"</span> are designated as Karmapravachaniya when they denote Lakshana, Itthambhutakhyana, Bhaga, and Vipsa.",
+            "sec2_title": "2. Karmapravachaniya in the sense of 'Lakshana'",
+            "sec2_desc": "Indicating a direction based on a mark/object.",
+            "s2_ex1": "1. Devadatta goes in the direction of (<span class='hl-karma'>prati</span>) the <span class='hl-lakshana'>village</span>.",
+            "s2_ex2": "2. Rama shoots arrows aiming at (<span class='hl-karma'>prati</span>) <span class='hl-lakshana'>Ravana</span>.",
+            "s2_ex3": "3. Moths fly towards (<span class='hl-karma'>prati</span>) the <span class='hl-lakshana'>fire</span>.",
+            "s2_ex4": "4. Lightning flashes towards (<span class='hl-karma'>prati</span>) the <span class='hl-lakshana'>tree</span>.",
+            "sec3_title": "3. Karmapravachaniya in the sense of 'Itthambhutakhyana'",
+            "sec3_desc": "Describing a specific state, quality, or emotion directed towards an object.",
+            "s3_ex1": "1. He is good towards (<span class='hl-karma'>prati</span>) his <span class='hl-lakshana'>mother</span>.",
+            "s3_ex2": "2. He is devoted towards (<span class='hl-karma'>prati</span>) <span class='hl-lakshana'>Hari</span>.",
+            "s3_ex3": "3. He is angry at (<span class='hl-karma'>prati</span>) <span class='hl-lakshana'>Duryodhana</span>.",
+            "s3_ex4": "4. In this country, beauty belongs to (<span class='hl-karma'>prati</span>) the <span class='hl-lakshana'>men</span>.",
+            "sec4_title": "4. Karmapravachaniya in the sense of 'Bhaga'",
+            "sec4_desc": "Indicating a share, allotment, or part-whole relationship.",
+            "s4_ex1": "1. Lakshmi fell to the share of (<span class='hl-karma'>prati</span>) <span class='hl-lakshana'>Vishnu</span>.",
+            "s4_ex2": "2. Poison fell to the share of (<span class='hl-karma'>prati</span>) <span class='hl-lakshana'>Hara</span>.",
+            "s4_ex3": "3. Five villages are a share for (<span class='hl-karma'>prati</span>) the <span class='hl-lakshana'>Pandavas</span>.",
+            "s4_ex4": "4. Fruits are a part of (<span class='hl-karma'>prati</span>) the <span class='hl-lakshana'>tree</span>.",
+            "sec5_title": "5. Karmapravachaniya in the sense of 'Vipsa'",
+            "sec5_desc": "Indicating pervasion or repetition (doing an action to each and every object).",
+            "s5_ex1": "1. He waters <span class='hl-lakshana'>each and every tree</span>.",
+            "s5_ex2": "2. He looks at <span class='hl-lakshana'>each and every house</span>.",
+            "s5_ex3": "3. He goes to <span class='hl-lakshana'>each and every village</span>.",
+            "s5_ex4": "4. He gives to <span class='hl-lakshana'>each and every person</span>.",
+            "sec6_title": "6. Karmapravachaniyas indicate relations",
+            "sec6_desc": "The words prati, pari, anu do not directly express these meanings, but merely indicate the <b>relationship</b> derived from those meanings.",
+            "sec7_title": "7. Purpose of this designation",
+            "sec7_desc": "1. <b>Apply Dvitiya Vibhakti</b>. 2. <b>Prevent Upasarga designation</b> (prevents unwanted 'shatva' rule).",
+            "sec8_title": "8. Avyayibhava compound with 'Prati'",
+            "sec8_desc": "When 'prati' means Lakshana, it can optionally form an Avyayibhava compound. (e.g., agnim prati = <b>pratyagnim</b>).",
+            "sec9_title": "9. 'Pari' takes only Dvitiya here",
+            "sec9_desc": "Even though 'pari' usually takes Panchami, it does so only in 'exclusion'. Here, it strictly takes <b>Dvitiya</b>.",
+            "sec10_title": "10. Why only in these meanings?",
+            "sec10_desc": "If used in other senses, they remain Upasargas. Example: <b>odanam parishinchati</b> (pari = all around). Here it gets 'shatva'.",
+            "gameTitle": "🎮 Knowledge Test (Quiz)", "gameSubtitle": "Answer the questions to proceed!",
+            "q1text": "<b>Question 1:</b> According to this Sutra, which words become Karmapravachaniya?", "q1o1": "Apa, Aang", "q1o2": "Prati, Pari, Anu", "q1o3": "Su, Ati",
+            "q2text": "<b>Question 2:</b> What meaning does 'Vruksham Vruksham prati sinchati' convey?", "q2o1": "Lakshana", "q2o2": "Bhaga", "q2o3": "Vipsa",
+            "q3text": "<b>Question 3:</b> What compound is optionally formed in 'Agnim prati shalabaha patanti'?", "q3o1": "Tatpurusha", "q3o2": "Avyayibhava (Pratyagnim)", "q3o3": "Bahuvrihi",
+            "successMsg": "🌟 Excellent! You have understood this Sutra perfectly."
+        }
+    };
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
